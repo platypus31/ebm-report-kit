@@ -6,13 +6,14 @@ EBM（實證醫學）報告產生器——丟論文反推整份 6A 報告的可�
 
 | Command | File | 說明 |
 |---------|------|------|
-| `/ebm` | `skills/ebm.md` | 主進入點 — 完整 5A 框架 EBM 報告流程 |
+| `/ebm-from-paper` | `skills/ebm-from-paper.md` | **最常用（反向）**：丟論文(PDF/DOI/PMID)反推整份 6A 報告簡報初稿＋待人工清單 |
+| `/ebm` | `skills/ebm.md` | 從臨床問題出發，互動式走完整 6A 流程 |
 | `/brainstorm` | `skills/brainstorm.md` | 搜尋 PubMed 近期文獻，激發選題靈感 |
 | `/pico` | `skills/pico.md` | PICO 框架分析 |
 | `/classify` | `skills/classify.md` | 臨床問題分類（診斷/預後/治療/預防/病因傷害） |
 | `/lit-search` | `skills/lit-search.md` | 6S 階層文獻搜尋（PubMed + Cochrane + Embase） |
 | `/appraise` | `skills/appraise.md` | 嚴格評讀（CASP / RoB 2 / AMSTAR 2） |
-| `/ebm-slides` | `skills/ebm-slides.md` | 產生 EBM 簡報（Canva） |
+| `/ebm-slides` | `skills/ebm-slides.md` | 產生 EBM 簡報（White Grey→ppt-master 可編輯 pptx） |
 | `/save-progress` | `skills/save-progress.md` | 儲存目前 EBM 報告進度 |
 | `/load-progress` | `skills/load-progress.md` | 載入已儲存的進度並繼續 |
 
@@ -83,7 +84,7 @@ projects/<name>/
 |------|------|
 | `scripts/init_project.py` | 初始化專案目錄結構 |
 | `scripts/validate_step.py` | 驗證各步驟產出是否完整（檔案層級） |
-| `scripts/quality_gate.py` | 5A 品質門檻驗證（內容層級，檢查 PICO 欄位、CSV 品質等） |
+| `scripts/quality_gate.py` | 品質門檻驗證（內容層級，檢查 PICO 欄位、CSV 品質等） |
 | `scripts/build_search_query.py` | 從 PICO YAML 自動建構 PubMed 搜尋式 |
 | `scripts/generate_prisma_flow.py` | 產生 PRISMA 篩選流程圖 |
 | `scripts/dedupe_results.py` | 候選文獻去重（依 PMID → DOI → 標題相似度） |
