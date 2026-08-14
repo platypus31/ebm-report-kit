@@ -73,39 +73,49 @@ def gate_ask(project: Path) -> GateResult:
     if pico_path.exists():
         pico = read_yaml(pico_path)
 
-        # Check PICO fields are not empty
+        # Check PICO fields are not empty（相容大小寫兩套 schema：p/i/c/o 或 P/I/C/O）
         pico_section = pico.get("pico", {})
+
+        def _pico_get(key):  # 大小寫皆接受
+            if not isinstance(pico_section, dict):
+                return {}
+            return pico_section.get(key) or pico_section.get(key.upper()) or {}
+
         if isinstance(pico_section, dict):
             for element in ["p", "i", "c"]:
-                elem = pico_section.get(element, {})
+                elem = _pico_get(element)
                 if isinstance(elem, dict):
+                    # zh 或 content 任一即可（不同 schema 用不同鍵）
                     has_mesh = bool(elem.get("mesh", ""))
-                    has_zh = bool(elem.get("zh", ""))
-                    r.check(has_mesh, f"PICO {element.upper()} 的 MeSH 欄位已填寫")
-                    r.check(has_zh, f"PICO {element.upper()} 的中文描述已填寫")
+                    has_zh = bool(elem.get("zh", "") or elem.get("content", ""))
+                    # C（對照）常為「不介入/安慰劑」無 MeSH term，降為警告不擋
+                    r.check(has_mesh, f"PICO {element.upper()} 的 MeSH 欄位已填寫",
+                            is_warning=(element == "c"))
+                    r.check(has_zh, f"PICO {element.upper()} 的描述已填寫")
                 else:
                     r.check(False, f"PICO {element.upper()} 格式不正確")
 
             # Outcome can be nested
-            o = pico_section.get("o", {})
+            o = _pico_get("o")
             if isinstance(o, dict):
                 primary = o.get("primary", o)
                 if isinstance(primary, dict):
-                    r.check(bool(primary.get("zh", "") or primary.get("mesh", "")),
+                    r.check(bool(primary.get("zh", "") or primary.get("mesh", "") or primary.get("content", "")),
                             "PICO O (Primary Outcome) 已填寫")
                 else:
                     r.check(bool(o.get("zh", "") or o.get("mesh", "")),
                             "PICO O (Outcome) 已填寫")
 
-        # Topic not empty
-        r.check(bool(pico.get("topic", "")), "主題 (topic) 已填寫")
+        # Topic（topic 或 clinical_question 任一）
+        r.check(bool(pico.get("topic", "") or pico.get("clinical_question", "")),
+                "主題／臨床問題已填寫")
 
-        # Classification
+        # Classification（question_type 或 classification.type 任一）
         classification = pico.get("classification", {})
-        if isinstance(classification, dict):
-            r.check(bool(classification.get("type", "")), "問題分類 (classification.type) 已填寫")
-        else:
-            r.check(False, "問題分類未填寫", is_warning=True)
+        ctype = pico.get("question_type", "")
+        if not ctype and isinstance(classification, dict):
+            ctype = classification.get("type", "")
+        r.check(bool(ctype), "問題分類已填寫")
 
     # Clinical scenario
     r.check(file_has_content(ask_dir / "clinical_scenario.md"),

@@ -3,7 +3,8 @@
 __pycache__/
 output/
 node_modules/
-.claude/settings.local.json
+.claude/*
+!.claude/commands/
 # 產物不入庫（跑 skill 時自動生成）
 projects/*/06_slides/svg_output/
 projects/*/06_slides/validation/

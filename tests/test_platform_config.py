@@ -42,7 +42,7 @@ class TestGenerateConfig:
     def test_all_platforms_have_shared_content(self):
         for platform in PLATFORMS:
             content = generate_config(platform)
-            assert "EBM Report Pipeline" in content
+            assert "EBM Report Kit" in content
             assert "5A" in content
             assert "PICO" in content
             assert "projects/<name>/" in content
