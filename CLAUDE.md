@@ -1,4 +1,4 @@
-# EBM Report Pipeline
+# EBM Report Kit
 
 PGY 住院醫師的 EBM (Evidence-Based Medicine) 報告互動式產生工具。從選科別到產出簡報的完整 5A 流程。
 
@@ -21,7 +21,7 @@ PGY 住院醫師的 EBM (Evidence-Based Medicine) 報告互動式產生工具。
 ### 快速開始
 
 ```bash
-cd ebm-report-pipeline
+cd ebm-report-kit
 claude
 > /ebm
 ```
@@ -140,7 +140,7 @@ projects/<name>/
 ## 完整檔案結構
 
 ```
-ebm-report-pipeline/
+ebm-report-kit/
 ├── CLAUDE.md                          # Claude Code 設定
 ├── GEMINI.md                          # Gemini CLI 設定
 ├── AGENTS.md                          # OpenAI Codex CLI 設定
