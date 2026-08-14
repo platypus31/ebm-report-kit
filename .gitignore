@@ -1,0 +1,13 @@
+.DS_Store
+*.pyc
+__pycache__/
+output/
+node_modules/
+.claude/
+# 產物不入庫（跑 skill 時自動生成）
+projects/*/06_slides/svg_output/
+projects/*/06_slides/validation/
+projects/*/assets/paper.pdf
+projects/*/assets/fulltext.xml
+projects/*/assets/figs/
+*.pptx

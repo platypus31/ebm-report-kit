@@ -1,0 +1,62 @@
+{
+  "_note": "EBM 5A 簡報 content.json 骨架（格式引擎共用 journal repo 的 gen_journal_svg.py）。section 過場用 5A 大寫；內容英文為主原文截取、條列精簡；figure 的 path 指向 extract_figures 裁好的圖或評讀截圖。示範內容取自 example-sglt2i-ckd 專案主題。",
+  "cover": {
+    "title": ["SGLT2 INHIBITORS FOR RENAL PROTECTION", "IN CKD WITH TYPE 2 DIABETES", "AN EVIDENCE-BASED APPRAISAL"],
+    "presenter": "Presenter: PGY2 ○○○",
+    "supervisor": "Supervisor: ○○○醫師"
+  },
+  "slides": [
+    {"kind": "content", "title": "5A Framework", "bullets": [
+      "ASK — clinical scenario and PICO question",
+      "ACQUIRE — systematic literature search (6S + PRISMA)",
+      "APPRAISE — critical appraisal (CASP / RoB 2.0)",
+      "APPLY — applicability to our patient in Taiwan",
+      "AUDIT — self-evaluation of the process"]},
+    {"kind": "section", "name": "ASK"},
+    {"kind": "content", "title": "Clinical Scenario", "bullets": [
+      "68-year-old man with type 2 diabetes and CKD stage 3a",
+      "eGFR 52 mL/min/1.73m2, UACR 380 mg/g, on metformin",
+      "Nephrology OPD asks: would adding an SGLT2 inhibitor slow renal progression?"]},
+    {"kind": "content", "title": "PICO", "bullets": [
+      "P: adults with type 2 diabetes and chronic kidney disease",
+      "I: SGLT2 inhibitor added to standard care",
+      "C: placebo plus standard care",
+      "O: composite kidney outcome (eGFR decline, ESKD, renal death)",
+      "Type: therapy question -> best design = RCT / SR of RCTs"]},
+    {"kind": "section", "name": "ACQUIRE"},
+    {"kind": "content", "title": "Search Strategy", "bullets": [
+      "PubMed: (SGLT2 inhibitor OR empagliflozin OR dapagliflozin) AND (chronic kidney disease) AND randomized controlled trial",
+      "Cochrane Library + ClinicalTrials.gov for ongoing trials",
+      "Filters: RCT, English, last 10 years",
+      "6S hierarchy checked from summaries downward"]},
+    {"kind": "figure", "title": "PRISMA Flow", "caption": "Screening flow: records identified -> screened -> included (screenshot or generate_prisma_flow.py)", "path": "<figs_dir>/prisma.png"},
+    {"kind": "content", "title": "Selected Article", "bullets": [
+      "EMPA-KIDNEY: empagliflozin in CKD, NEJM 2023",
+      "6609 patients, eGFR 20-45 or 45-90 with albuminuria",
+      "Chosen for: population closest to our patient, largest CKD trial"]},
+    {"kind": "section", "name": "APPRAISE"},
+    {"kind": "content", "title": "Critical Appraisal (RoB 2.0)", "bullets": [
+      "Randomisation: central, allocation concealed — low risk",
+      "Blinding: double-blind, placebo-controlled — low risk",
+      "Missing data: >99% follow-up complete — low risk",
+      "Overall risk of bias: LOW"]},
+    {"kind": "content", "title": "Key Results", "bullets": [
+      "Primary outcome (kidney disease progression or CV death): HR 0.72 (95% CI 0.64 to 0.82)",
+      "NNT approximately 28 over 2 years",
+      "Consistent across eGFR and albuminuria subgroups",
+      "Safety: no excess ketoacidosis or amputation signal"]},
+    {"kind": "figure", "title": "Primary Outcome — Forest / KM", "caption": "Extract from trial PDF via extract_figures.py + fitz clip", "path": "<figs_dir>/primary_outcome.png"},
+    {"kind": "section", "name": "APPLY"},
+    {"kind": "content", "title": "Applicability to Our Patient", "bullets": [
+      "Our patient matches trial population (eGFR 52, albuminuric)",
+      "NHI reimbursement in Taiwan: covered for DM with CKD criteria",
+      "Monitor: euglycemic DKA education, sick-day rule, volume status",
+      "Shared decision: renal benefit vs GU infection risk"]},
+    {"kind": "section", "name": "AUDIT"},
+    {"kind": "content", "title": "Self-Evaluation", "bullets": [
+      "Search took 40 min; PICO refined once after scoping",
+      "Next time: run MeSH mapping first to reduce noise",
+      "Answerable question, high-quality evidence found and applied"]},
+    {"kind": "section", "name": "THANK YOU"}
+  ]
+}

@@ -1,0 +1,24 @@
+# 反推自 PMID 33693636（/ebm-from-paper 首跑）
+question_type: 預防型  # 五型勾選：治療/診斷/預後/傷害/【預防】→ 最佳設計 RCT；本題無 RCT，現有最佳=世代研究
+pico:
+  P:
+    content: 65 歲以上社區長者（含多重共病）
+    mesh: ["Aged", "COVID-19"]
+    synonyms: ["older adults", "elderly", "SARS-CoV-2"]
+    zh: 高齡長者、新冠肺炎
+  I:
+    content: 接種 13 價肺炎鏈球菌結合型疫苗（PCV13，依 ACIP 時程）
+    mesh: ["Pneumococcal Vaccines"]
+    synonyms: ["pneumococcal conjugate vaccine", "PCV13", "conjugate"]
+    zh: 肺炎鏈球菌結合型疫苗
+  C:
+    content: 未接種 PCV13（含僅接種 PPSV23 者，次分析）
+    mesh: []
+    synonyms: ["unvaccinated", "PPSV23 only"]
+    zh: 未接種
+  O:
+    content: COVID-19 確診／住院／住院後死亡
+    mesh: ["Hospitalization", "Mortality"]
+    synonyms: ["COVID-19 diagnosis", "hospitalization", "fatal"]
+    zh: 確診、住院、死亡
+clinical_question: 65 歲以上長者接種 PCV13，是否降低 COVID-19 確診、住院與死亡風險？

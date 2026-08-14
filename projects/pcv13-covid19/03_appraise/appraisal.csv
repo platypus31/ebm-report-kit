@@ -1,0 +1,15 @@
+no,section,question_en,question_zh,answer,confidence,comment,evidence_page,bias_type
+1,A-Validity,Did the study address a clearly focused issue?,研究是否問了一個清楚聚焦的問題？,Yes,高,"族群（KPSC ≥65 歲，2020/3/1 前加入滿一年）、暴露（依 ACIP 時程接種 PCV13）、結局（確診／住院／住院後 60 天內死亡三級，定義精確）都明確界定",p2,
+2,A-Validity,Was the cohort recruited in an acceptable way?,世代的收案方式可接受嗎？,Yes,中🟡,"納入 KPSC 全體符合條件者 531,033 人非抽樣，選樣偏差低；但 KPSC 為美國私人保險體系，能否代表一般社區長者（尤其低就醫可近性族群）有外推限制——此點供台灣情境 Q10 再議",p2,Selection bias
+3,A-Validity,Was the exposure accurately measured to minimise bias?,暴露的測量是否準確以減少偏差？,Yes,高,"疫苗紀錄來自 EHR（客觀非自述）；嚴格依 2015 ACIP 時程定義合格接種、剔除時序不合者；接種後 30 天不計入（等待免疫生成）",p2,Measurement/classification bias
+4,A-Validity,Was the outcome accurately measured to minimise bias?,結局的測量是否準確以減少偏差？,Yes,中🟡,"81.2% 確診有分子檢測佐證，其餘為臨床診斷（可能於外院檢測）；住院／死亡窗口定義明確且排除 <24h 觀察性住院。作者論證：結局誤分類的方向是偏向虛無假設（低估效果）",p2 & p10(limitations),Detection bias
+5a,A-Validity,Have the authors identified all important confounding factors?,作者是否指出所有重要干擾因子？,Yes,高,"年齡(5歲組)/性別/種族/吸菸/BMI/19 項共病/前一年三類就醫利用/居住地收入/帶狀疱疹疫苗/流感疫苗；缺口作者自承：口罩與社交距離行為、接觸兒童、群居——不可測",p3,Confounding
+5b,A-Validity,Have they taken account of the confounding factors in the design and/or analysis?,是否在設計或分析中處理干擾因子？,Yes,高,"三重設計：① doubly-robust Cox＋逆傾向加權(IPW) ② 帶狀疱疹疫苗當 negative control（aHR_P/aHR_Z 校正殘餘混雜）③ 流感疫苗做敏感度分析證明 NC 選擇不敏感——本篇最大方法學亮點",p3,Confounding
+6a,A-Validity,Was the follow up of subjects complete enough?,追蹤是否夠完整？,Yes,高,"封閉保險體系就醫紀錄近乎完整（含外院理賠回捕）；期間 3,677 確診/1,075 住院/334 死亡事件數充足",p2 p4,Attrition bias
+6b,A-Validity,Was the follow up of subjects long enough?,追蹤是否夠長？,Can't tell,🟡,"2020/3/1–7/22 僅 4.7 個月（疫情早期、無 COVID 疫苗時代）；回答「疫情早期保護」足夠，但無法回答效果的持續性——同團隊 2024 續作顯示 COVID 疫苗時代效應縮小至 aHR 0.92（見 Q11）",p4,
+7,B-Results,What are the results of this study?,研究結果是什麼？,—,高,"PCV13 vs 未接種（zoster 校正後）：確診 aHR 0.65 (95% CI .59–.72)；住院 0.68 (.57–.83)；死亡 0.68 (.49–.95)。PPSV23 無獨立保護（住院 aHR 1.02, .78–1.29）。抗生素後 1–90 天效果消失（aOR≈1.1）、91–365 天回到 0.65——支持「帶菌媒介」機轉",p4-5,
+8,B-Results,How precise are the results?,結果有多精確？,—,高,"確診端點 CI 最窄（.59–.72，53 萬人樣本）；住院次之；死亡端點 CI 寬（.49–.95）上限逼近 1——三端點方向一致但精確度遞減，簡報要照實講",p4-5,
+9,B-Results,Do you believe the results?,你相信這個結果嗎？,Yes,中🟡,"信：效應中等大小且三端點一致、PPSV23 陰性結果與抗生素效果修飾兩條「機轉指紋」都指向帶菌媒介、NC 設計是觀察性研究的模範。保留：觀察性設計因果推論仍有上限、殘餘混雜不可完全排除（作者自承）、帶菌狀態未直接測量——判 Yes 但把保留點寫上簡報",p6 discussion & p10,
+10,C-Applicability,Can the results be applied to the local population?,結果能應用到本地族群嗎？,Yes,中🟡,"陳伯伯 68 歲合研究族群；種族含亞裔 12.5%；台灣公費肺炎鏈球菌疫苗政策與現行品項（PCV13/15/20 世代交替）需查證更新——🟡 標待查證：台灣現行 65+ 公費品項與本研究 PCV13 的血清型涵蓋差異",p2 Table1,
+11,C-Applicability,Do the results of this study fit with other available evidence?,結果與其他證據吻合嗎？,Yes,高,"二次搜尋交叉驗證：① 同團隊 2024 KPSC 續作（PMID 39101606）：COVID 疫苗時代 aHR 0.92（.90–.95）——方向一致但效應大幅縮小 ② Mayo Clinic 探索性分析（PMID 33637783）也見近期疫苗接種者 SARS-CoV-2 陽性率較低 ③ 兒童/成人 PCV 對病毒相關肺炎 23–49% 保護的 RCT 傳統",—,
+12,C-Applicability,What are the implications of this study for practice?,對臨床實務的意涵？,—,高,"單一觀察性研究不足以把 PCV13 改列為『防 COVID 疫苗』或改變政策；正確定位＝對『本來就符合肺炎鏈球菌疫苗適應症』的長者，多一個鼓勵接種的理由（防肺炎為主、可能附帶呼吸道病毒交互作用上的好處）",p6-7,
