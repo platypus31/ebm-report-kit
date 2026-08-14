@@ -15,6 +15,7 @@
 - 全向量 PDF（JID/BMJ 等）抓 Figure：先用 search 找 caption 定位頁碼與 y，再用 --rect 裁圖區（caption 之上）。
 """
 import argparse
+import os
 import sys
 
 import pymupdf
@@ -34,20 +35,41 @@ def main():
     ap.add_argument("--no-box", action="store_true", help="不畫紅框（純裁圖）")
     args = ap.parse_args()
 
-    doc = pymupdf.open(args.pdf)
+    if args.zoom <= 0:
+        sys.exit(f"--zoom 必須 > 0，收到 {args.zoom}")
+    try:
+        doc = pymupdf.open(args.pdf)
+    except Exception as e:
+        sys.exit(f"無法開啟 PDF：{args.pdf}（{e}）")
+    npage = len(doc)
+
+    def get_page(p):  # 1-based，範圍檢查（Python 負索引會靜默裁到錯誤的頁）
+        if p is None or not (1 <= p <= npage):
+            sys.exit(f"--page 必須在 1..{npage} 之間，收到 {p}")
+        return doc[p - 1]
+
+    def save_pix(pix, out):  # 存檔失敗清掉半成品（0-byte 屍體會被引擎當好圖嵌入）
+        try:
+            pix.save(out)
+        except Exception as e:
+            if os.path.isfile(out):
+                os.remove(out)
+            sys.exit(f"裁圖存檔失敗，已清除半成品：{out}（{e}）")
 
     if args.rect:
-        if args.page is None:
-            sys.exit("--rect 需要 --page")
-        pg = doc[args.page - 1]
+        pg = get_page(args.page)
         vals = [float(v) for v in args.rect.split(",")]
+        if len(vals) != 4:
+            sys.exit(f"--rect 需要 4 個值 x0,y0,x1,y1，收到 {len(vals)} 個")
+        if vals[0] >= vals[2] or vals[1] >= vals[3]:
+            sys.exit(f"--rect 需 x0<x1 且 y0<y1，收到 {vals}")
         if max(vals) <= 1.0:
             r = pymupdf.Rect(vals[0] * pg.rect.width, vals[1] * pg.rect.height,
                              vals[2] * pg.rect.width, vals[3] * pg.rect.height)
         else:
             r = pymupdf.Rect(*vals)
         pix = pg.get_pixmap(matrix=pymupdf.Matrix(args.zoom, args.zoom), clip=r)
-        pix.save(args.out)
+        save_pix(pix, args.out)
         print(f"✅ {args.out}  p{args.page} rect={r}  {pix.width}x{pix.height}")
         return
 
@@ -86,7 +108,7 @@ def main():
                          color=(0.85, 0, 0), width=1.2)
 
     pix = pg.get_pixmap(matrix=pymupdf.Matrix(args.zoom, args.zoom), clip=clip)
-    pix.save(args.out)
+    save_pix(pix, args.out)
     print(f"✅ {args.out}  p{pno} 命中 {len(hits)} 句  {pix.width}x{pix.height}")
     if args.no_box:
         # 輸出每個命中框在裁圖內的相對比例（引擎 figure `hl` 用：紅框改由 SVG 疊層＝pptx 可編輯形狀）

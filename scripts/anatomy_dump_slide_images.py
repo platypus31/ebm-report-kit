@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""範本解剖工具②：抽指定 slide 的所有圖片（挑固定資產候選用；正式資產進 extract_assets.py 的 MANIFEST）。
+"""範本解剖工具②：抽指定 slide 的所有圖片（挑固定資產候選用；挑選候選圖用（僅供人工參考））。
 用法：python3 scripts/anatomy_dump_slide_images.py <pptx> <slide#,slide#…> <outdir>
 """
 import sys, os

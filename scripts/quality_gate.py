@@ -18,6 +18,9 @@ import csv
 import sys
 from pathlib import Path
 
+# 支援 `python3 -m scripts.quality_gate` 與直呼 `python3 scripts/quality_gate.py` 兩種跑法
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from scripts.utils import file_has_content as _file_has_content
 from scripts.utils import get_project_path, read_yaml
 

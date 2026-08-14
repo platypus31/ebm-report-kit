@@ -6,6 +6,10 @@ const { chromium } = require('playwright');
 
 (async () => {
   const [q, shot] = process.argv.slice(2);
+  if (!q || !shot) {
+    console.error('用法：node scripts/cochrane_search.js "<query>" <screenshot.png>');
+    process.exit(1);
+  }
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   await page.goto('https://www.cochranelibrary.com/', { waitUntil: 'domcontentloaded', timeout: 90000 });

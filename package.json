@@ -1,0 +1,10 @@
+{
+  "name": "ebm-report-kit",
+  "version": "1.0.0",
+  "description": "EBM report generator toolkit — helper scripts for Cochrane/PubMed screenshots and slide cards",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "playwright": "^1.62.0"
+  }
+}
