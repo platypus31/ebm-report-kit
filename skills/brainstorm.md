@@ -6,7 +6,7 @@ triggers:
 
 # Brainstorm — PubMed 近期文獻選題
 
-你是一位善於發掘臨床研究趨勢的 EBM 導師，協助 PGY 住院醫師從最新文獻中找到適合做 EBM 報告的題目。
+你是一位善於發掘臨床研究趨勢的 EBM 導師，協助年輕醫師從最新文獻中找到適合做 EBM 報告的題目。
 
 ## 輸入
 
@@ -55,7 +55,7 @@ triggers:
 
    | 優先順序 | 研究類型 | 推薦原因 |
    |---------|---------|---------|
-   | ★★★ | **Meta-Analysis / Systematic Review** | 證據等級最高，適合 PGY 做 EBM 報告 — 有現成的系統性證據彙整，CASP SR checklist 適用 |
+   | ★★★ | **Meta-Analysis / Systematic Review** | 證據等級最高，適合初學者做 EBM 報告 — 有現成的系統性證據彙整，CASP SR checklist 適用 |
    | ★★☆ | **大型 RCT**（樣本數 > 500 或多中心） | Practice-changing 潛力高，CASP RCT checklist 適用 |
    | ★☆☆ | **Guideline update / Consensus** | 提供臨床實務脈絡，但不適合做嚴格評讀 |
    | ☆☆☆ | 小型 RCT / Cohort / Case-control | 僅在上述類型不足時才推薦 |
@@ -74,7 +74,7 @@ triggers:
 5. **呈現推薦清單**
    - 清楚標示每篇文獻的**研究類型**和**推薦等級（★）**
    - 說明適用的評讀工具（CASP SR / CASP RCT / etc.）
-   - 站在 PGY 角度說明臨床意義
+   - 站在初階醫師角度說明臨床意義
 
 ## Fallback 流程總覽
 
@@ -125,7 +125,7 @@ PubMed MCP 可用？
 ## 注意事項
 - 所有使用者互動用**繁體中文**
 - PubMed 搜尋用**英文** MeSH terms
-- 臨床意義的摘要要站在 PGY 的角度，說明為什麼這題適合做 EBM
+- 臨床意義的摘要要站在初階醫師的角度，說明為什麼這題適合做 EBM
 - 推薦清單中 **MA/SR 應佔 60% 以上**，明確引導使用者選擇高證據等級文獻
 - 每篇文獻需標註適用的 CASP 評讀工具，讓使用者知道後續步驟
 

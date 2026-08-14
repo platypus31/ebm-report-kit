@@ -2,7 +2,7 @@
   "_note": "EBM 5A 簡報 content.json 骨架（格式引擎共用 journal repo 的 gen_journal_svg.py）。section 過場用 5A 大寫；內容英文為主原文截取、條列精簡；figure 的 path 指向 extract_figures 裁好的圖或評讀截圖。示範內容取自 example-sglt2i-ckd 專案主題。",
   "cover": {
     "title": ["SGLT2 INHIBITORS FOR RENAL PROTECTION", "IN CKD WITH TYPE 2 DIABETES", "AN EVIDENCE-BASED APPRAISAL"],
-    "presenter": "Presenter: PGY2 ○○○",
+    "presenter": "Presenter: ○○○ 醫師",
     "supervisor": "Supervisor: ○○○醫師"
   },
   "slides": [

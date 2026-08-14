@@ -1,20 +1,20 @@
 # EBM Report Kit
 
-EBM（實證醫學）報告產生器。**主要用法：丟一篇論文 → 反推整份 6A 報告的可編輯簡報初稿**。
-內容結構權威見 `data/report-spec.md`，名詞公式見 `data/glossary.md`。
+EBM（實證醫學）報告產生器——丟論文反推整份 6A 報告的可編輯簡報初稿。
 
 ## Skills
 
 | Command | File | 說明 |
 |---------|------|------|
-| `/ebm-from-paper` | `skills/ebm-from-paper.md` | **主入口（反向）** — 丟論文（PDF/DOI/PMID）反推整份 6A 報告簡報初稿＋待人工清單 |
-| `/ebm` | `skills/ebm.md` | 從臨床問題出發，互動式走完整 6A 流程 |
+| `/ebm` | `skills/ebm.md` | 主進入點 — 完整 5A 框架 EBM 報告流程 |
+| `/brainstorm` | `skills/brainstorm.md` | 搜尋 PubMed 近期文獻，激發選題靈感 |
 | `/pico` | `skills/pico.md` | PICO 框架分析 |
-| `/classify` | `skills/classify.md` | 臨床問題分類（治療/診斷/預後/傷害/預防五型） |
-| `/lit-search` | `skills/lit-search.md` | 檢索（PubMed E-utilities＋Cochrane） |
+| `/classify` | `skills/classify.md` | 臨床問題分類（診斷/預後/治療/預防/病因傷害） |
+| `/lit-search` | `skills/lit-search.md` | 6S 階層文獻搜尋（PubMed + Cochrane + Embase） |
 | `/appraise` | `skills/appraise.md` | 嚴格評讀（CASP / RoB 2 / AMSTAR 2） |
-| `/ebm-slides` | `skills/ebm-slides.md` | 產生簡報（White Grey 格式：gen_journal_svg 引擎 → ppt-master 匯出 native 可編輯 pptx） |
-| `/save-progress`／`/load-progress` | 對應 md | 儲存／載入報告進度 |
+| `/ebm-slides` | `skills/ebm-slides.md` | 產生 EBM 簡報（Canva） |
+| `/save-progress` | `skills/save-progress.md` | 儲存目前 EBM 報告進度 |
+| `/load-progress` | `skills/load-progress.md` | 載入已儲存的進度並繼續 |
 
 ## 使用方式
 
@@ -23,11 +23,10 @@ EBM（實證醫學）報告產生器。**主要用法：丟一篇論文 → 反�
 ```bash
 cd ebm-report-kit
 claude
-> /ebm-from-paper 33693636      # Claude Code：.claude/commands/ 已附
+> /ebm
 ```
 
-其他 AI CLI（Codex / Gemini）沒有斜線指令時，改成直接對 AI 說：
-**「請讀 skills/ebm-from-paper.md 並對這篇論文執行：<PMID/DOI/PDF>」**——效果相同。
+系統會自動建立專案目錄、引導完成 5A 流程、每個步驟產出結構化檔案。
 
 ### 手動建立專案
 
@@ -74,8 +73,8 @@ projects/<name>/
 ├── 05_audit/                  # AUDIT — 自我評估
 │   └── self_assessment.md     # 五面向自我評估
 └── 06_slides/                 # 簡報輸出
-    ├── content.json           # 簡報中間格式（餵給 gen_journal_svg）
-    └── ebm-report.pptx        # 匯出的 PowerPoint
+    ├── slides.json            # 簡報資料（JSON）
+    └── ebm-report.pptx        # PowerPoint 檔案
 ```
 
 ## 實體腳本
@@ -84,7 +83,7 @@ projects/<name>/
 |------|------|
 | `scripts/init_project.py` | 初始化專案目錄結構 |
 | `scripts/validate_step.py` | 驗證各步驟產出是否完整（檔案層級） |
-| `scripts/quality_gate.py` | 品質門檻驗證（跑法：`python3 -m scripts.quality_gate --project <name>`，不可直呼） |
+| `scripts/quality_gate.py` | 5A 品質門檻驗證（內容層級，檢查 PICO 欄位、CSV 品質等） |
 | `scripts/build_search_query.py` | 從 PICO YAML 自動建構 PubMed 搜尋式 |
 | `scripts/generate_prisma_flow.py` | 產生 PRISMA 篩選流程圖 |
 | `scripts/dedupe_results.py` | 候選文獻去重（依 PMID → DOI → 標題相似度） |
@@ -95,7 +94,7 @@ projects/<name>/
 
 ## 品質門檻
 
-每個階段完成時可驗證：
+每個 5A 階段完成時會自動驗證：
 
 | 階段 | 驗證內容 |
 |------|---------|
@@ -122,16 +121,14 @@ projects/<name>/
 
 `projects/example-sglt2i-ckd/` — SGLT2i 在 CKD 合併糖尿病的完整 EBM 報告範例，展示每個步驟的結構化產出。
 
-## 外部工具（核心零 MCP）
+## MCP 工具
 
-核心流程**不依賴任何 MCP**：
-- PubMed 檢索／metadata／摘要：內建 E-utilities（curl，見 `skills/ebm-from-paper.md` 指令模板）
-- 論文全文：Europe PMC（PDF＋fullTextXML）
-- Cochrane 檢索＋截圖：`scripts/cochrane_search.js`（內建 Playwright）
-- 簡報匯出：[ppt-master](https://github.com/hugohe3/ppt-master)（`~/ppt-master`）
-- 圖表：`scripts/extract_figures.py`／`clip_evidence.py`（pymupdf）
-
-有 PubMed／Playwright MCP 可加分替代上述內建管道，但非必需。
+本專案使用以下 MCP 工具：
+- **PubMed MCP** — search_articles, get_article_metadata, find_related_articles, get_full_text_article
+- **Playwright MCP** — Cochrane Library 網站搜尋
+- **Clinical Trials MCP** — ClinicalTrials.gov 進行中試驗搜尋
+- **Canva MCP** — 簡報產生
+- **ICD-10 MCP** — 輔助搜尋詞彙查詢
 
 ## 語言規則
 

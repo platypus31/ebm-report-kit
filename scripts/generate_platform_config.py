@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 HEADER = """\
 # EBM Report Kit
 
-PGY 住院醫師的 EBM (Evidence-Based Medicine) 報告互動式產生工具。從選科別到產出簡報的完整 5A 流程。
+EBM（實證醫學）報告產生器——丟論文反推整份 6A 報告的可編輯簡報初稿。
 """
 
 SKILLS_TABLE = """\
