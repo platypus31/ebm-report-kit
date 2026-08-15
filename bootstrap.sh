@@ -84,11 +84,14 @@ if [ "${CHECK_ONLY}" = "1" ]; then
 elif command -v npm >/dev/null 2>&1; then
   if (cd "${KIT_DIR}" && npm install --silent); then
     ok "npm install 完成"
-    if (cd "${KIT_DIR}" && npx playwright install chromium >/dev/null 2>&1) && has_chromium; then
+    PW_LOG="$(mktemp)"
+    if (cd "${KIT_DIR}" && npx playwright install chromium >"${PW_LOG}" 2>&1) && has_chromium; then
       ok "Playwright chromium 就緒"
     else
       bad "chromium 安裝失敗或找不到執行檔（網路？磁碟空間？）"
+      tail -5 "${PW_LOG}" 2>/dev/null | sed 's/^/     /'
     fi
+    rm -f "${PW_LOG}"
   else
     bad "npm install 失敗（看上面錯誤訊息）"
   fi
