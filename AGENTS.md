@@ -205,7 +205,7 @@ ebm-report-kit/
 │   ├── screenshot.py                  # 截圖清單管理
 │   ├── build_slide_outline.py         # 組裝舊格式 slides.json（fallback 用）
 │   ├── generate_pptx.py               # python-pptx fallback 產生器
-│   ├── generate_platform_config.py    # 跨平台設定產生器
+│   ├── generate_platform_config.py    # 平台設定檔同步（內容源自 CLAUDE.md）
 │   └── status.py                      # 專案進度儀表板
 ├── data/                              # 參考資料（所有平台共用）
 │   ├── report-spec.md                 # 🔴 內容結構權威（6A 骨架/張數/分型/紅線）
