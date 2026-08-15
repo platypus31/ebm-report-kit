@@ -113,15 +113,13 @@ else
   fi
 fi
 if [ -d "${PPT_MASTER}" ] && [ "${CHECK_ONLY}" != "1" ]; then
-  if [ ! -x "${PPT_MASTER}/.venv/bin/python" ]; then
-    if python3 -m venv "${PPT_MASTER}/.venv" && \
-       "${PPT_MASTER}/.venv/bin/pip" install -q --disable-pip-version-check -r "${PPT_MASTER}/requirements.txt"; then
-      ok "ppt-master venv 就緒"
-    else
-      bad "ppt-master venv 安裝失敗"
-    fi
+  # 只看 .venv/bin/python 存在不夠：前次 pip 中途失敗會留下「venv 在但依賴缺」的半成品
+  [ -x "${PPT_MASTER}/.venv/bin/python" ] || python3 -m venv "${PPT_MASTER}/.venv"
+  if [ -x "${PPT_MASTER}/.venv/bin/pip" ] && \
+     "${PPT_MASTER}/.venv/bin/pip" install -q --disable-pip-version-check -r "${PPT_MASTER}/requirements.txt"; then
+    ok "ppt-master venv 就緒"
   else
-    ok "ppt-master venv 已存在"
+    bad "ppt-master venv 安裝失敗"
   fi
 fi
 
@@ -131,13 +129,14 @@ say "[5/5] Self-check"
 SELFCHECK_PY="python3"
 [ -x "${VENV_PY}" ] && SELFCHECK_PY="${VENV_PY}"
 
-if (cd "${KIT_DIR}" && "${SELFCHECK_PY}" -m pytest tests/ -q >/tmp/ebm-bootstrap-pytest.$$ 2>&1); then
-  ok "單元測試通過（$(grep -o '[0-9]* passed' /tmp/ebm-bootstrap-pytest.$$ | tail -1)）"
+PYTEST_LOG="$(mktemp)"
+if (cd "${KIT_DIR}" && "${SELFCHECK_PY}" -m pytest tests/ -q >"${PYTEST_LOG}" 2>&1); then
+  ok "單元測試通過（$(grep -o '[0-9]* passed' "${PYTEST_LOG}" | tail -1)）"
 else
   bad "單元測試失敗 — 詳情：${SELFCHECK_PY} -m pytest tests/ -q"
-  tail -5 /tmp/ebm-bootstrap-pytest.$$ 2>/dev/null | sed 's/^/     /'
+  tail -5 "${PYTEST_LOG}" 2>/dev/null | sed 's/^/     /'
 fi
-rm -f /tmp/ebm-bootstrap-pytest.$$
+rm -f "${PYTEST_LOG}"
 
 # 範例專案實跑簡報引擎：張數應等於 content.json 的 slides 數 + 1 張封面
 EXAMPLE_JSON="${KIT_DIR}/projects/example-pcv13-covid19/06_slides/content.json"

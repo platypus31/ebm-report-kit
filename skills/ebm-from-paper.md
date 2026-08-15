@@ -139,7 +139,7 @@ PROJECT_DIR="$PWD/projects/<name>"    # 換成你的專案名，須為絕對路�
 照 `skills/ebm-slides.md` §3 五步（content.json → gen_journal_svg → 品質關卡 → 匯出）；
 大綱按 `data/report-spec.md` §2 張數配比自檢（總數 45-70 張，評讀 35% 上下）。
 
-**引擎頁型（`gen_journal_svg.py` 支援五種 kind，未知 kind 會靜默 fallback 成 `content`）**：
+**引擎頁型（`gen_journal_svg.py` 支援下列五種 kind；寫錯 kind 會直接報錯中止並列出合法值，不會靜默降級）**：
 
 | kind | 用途 | 可編輯性 |
 |---|---|---|
