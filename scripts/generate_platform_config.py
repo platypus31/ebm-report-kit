@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-# ⚠️ 平台設定檔內容以 CLAUDE.md 為單一權威（複製+header），本產生器的硬編內容已停用避免漂移。
+# ⚠️ 平台設定檔內容以 CLAUDE.md 為單一權威：AGENTS.md / GEMINI.md / .cursorrules /
+#    .github/copilot-instructions.md ＝「該檔第一行 header ＋ CLAUDE.md 全文」。
+# 🔴 本產生器內的硬編內容已過期、僅供 tests/test_platform_config.py 檢查函式介面用；
+#    直接執行會用過期內容覆蓋上述四檔。要同步請改 CLAUDE.md 後重貼 header ＋ 全文。
 """
 跨平台 AI 工具設定檔產生器。
 

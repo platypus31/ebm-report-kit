@@ -63,25 +63,31 @@ triggers:
 在簡報大綱中，為每張有截圖的投影片加入 `image` 欄位，指向截圖檔案路徑。
 
 關鍵要素：
-- 每個 5A 階段之間插入**導航過場頁**（依模板風格）
+- 每個 6A 階段之間插入**導航過場頁**（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT，依模板風格）
 - 評讀段落佔最大篇幅（約 35%）
 - 投影片張數依模板而異（Style B: 40-50 張, Style D: 55-70 張）
 
-向使用者展示完整大���，確認內容和順序。
+向使用者展示完整大綱，確認內容和順序。
 
 ### 3. 產生簡報（定案主路線：gen_journal_svg 格式引擎 → ppt-master export）
 
-與 journal-reading pipeline **共用同一格式引擎**（單一權威在 journal repo，不複製避免 drift）：
-`scripts/gen_journal_svg.py`。實戰驗收案例：BMJ GLP-1RA 23 頁成品（2026-08-12 使用者拍板）。
+格式引擎已 vendor 於本 repo：`scripts/gen_journal_svg.py`（與 journal-reading-kit 同源、**各自獨立**，兩 repo 互不依賴）。
+實戰驗收案例：BMJ GLP-1RA 23 頁成品（2026-08-12 使用者拍板）。
 
-**內容規則（使用者 2026-08-14 拍板改版）**：**EBM pipeline 中文為主**——敘事/評論/臨床場景/臨床回覆用中文，評讀題目中英對照，檢索式/MeSH/數據（OR/HR/CI/p）保持英文原文；journal pipeline 維持英文為主，**兩者共用同一簡報引擎流程**。內容結構照 `data/report-spec.md` §4 統一規格（6A 骨架＋分型評讀）；**條列式精簡 bullet**（過長會被 gate 擋，生成器會自動拆行）；一頁 3-5 條。
+**內容規則（使用者 2026-08-14 拍板改版）**：**EBM pipeline 中文為主**——敘事/評論/臨床場景/臨床回覆用中文，評讀題目中英對照，檢索式/MeSH/數據（OR/HR/CI/p）保持英文原文；journal pipeline 維持英文為主，**兩者引擎相同、各自獨立維護**。內容結構照 `data/report-spec.md` §4 統一規格（6A 骨架＋分型評讀）；**條列式精簡 bullet**（過長會被 gate 擋，生成器會自動拆行）；一頁 3-5 條。
 
-**五步流程**（用 ppt-master venv：`PY=~/ppt-master/.venv/bin/python`）：
-1. **組內容** → 依 `data/example-content-ebm.json` 骨架把 5A 各步產出寫成 `PROJECT_DIR/06_slides/content.json`（cover + slides：**section 過場用 5A 大寫**（ASK/ACQUIRE/APPRAISE/APPLY/AUDIT）+ content 條列頁 + figure 圖表頁）
+**五步流程**（ppt-master 安裝位置用環境變數 `PPT_MASTER_DIR` 覆寫，預設 `~/ppt-master`）：
+
+```bash
+PPT_MASTER="${PPT_MASTER_DIR:-$HOME/ppt-master}"
+PY="$PPT_MASTER/.venv/bin/python"
+```
+
+1. **組內容** → 依 `data/example-content-ebm.json` 骨架把各步產出寫成 `PROJECT_DIR/06_slides/content.json`（cover + slides：**section 過場用 6A 大寫**（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT；ANALYSIS 素材取自 `01_ask/clinical_scenario.md`，無獨立目錄）+ content 條列頁 + figure 圖表頁）
 2. **抽圖表** → 選定文獻的 PDF 用 `scripts/extract_figures.py <pdf> -o <dir>` 抽 forest plot/KM curve；截圖（`assets/screenshots.json` 的 PubMed/評讀截圖）直接以 `path` 欄位嵌入 figure 頁。⚠️ 全向量圖期刊（BMJ 等）抽出的是整頁 render，需再用 `fitz` clip 按比例精裁圖區（dpi=200），裁完看縮圖確認無殘字
 3. **生成 SVG** → `$PY scripts/gen_journal_svg.py content.json <project>/svg_output`
-4. **品質關卡** → `cd ~/ppt-master && $PY skills/ppt-master/scripts/svg_quality_checker.py <project> --quick-generate --stage final --json`（rc≠0 修到過；gate 讀舊快取時換新目錄重跑）
-5. **導出** → `$PY skills/ppt-master/scripts/svg_to_pptx.py <project> -o PROJECT_DIR/06_slides/ebm-report.pptx --quick-generate`（🔴 **rc=0 且 `ls` 確認檔案存在才算完成**）
+4. **品質關卡** → `cd "$PPT_MASTER" && $PY skills/ppt-master/scripts/svg_quality_checker.py <project> --quick-generate --stage final --json`（rc≠0 修到過；gate 讀舊快取時換新目錄重跑）
+5. **導出** → `$PY "$PPT_MASTER"/skills/ppt-master/scripts/svg_to_pptx.py <project> -o PROJECT_DIR/06_slides/ebm-report.pptx --quick-generate`（🔴 **rc=0 且 `ls` 確認檔案存在才算完成**）
 
 **備選**：ppt-master Fill Native PPTX 硬套使用者提供的 .pptx 範本（使用者已判硬套會不搭，僅明確要求時用）。**主路線不可用時依序 fallback**：Canva MCP → python-pptx → Markdown（見下）。
 
@@ -118,17 +124,17 @@ Sonnet 可跑但內容選擇較平、裁圖與除錯較弱，僅適合草稿或 
 
 ### 4. 交付
 
-提供 Canva 設計連結，提醒使用者：
-- 可以在 Canva 編輯器中進一步調整
+交付 native 可編輯 `.pptx`（`PROJECT_DIR/06_slides/ebm-report.pptx`），提醒使用者：
+- 文字、表格、紅框皆為 PowerPoint 原生物件，可直接改字、拉框、換色
 - 截圖已自動存入 `PROJECT_DIR/assets/screenshots/`，可直接拖入簡報
 - 檢查截圖完整性：`python3 scripts/screenshot.py --project <name> --check`
-- 可以匯出為 PDF 或 PPTX
+- 可用 PowerPoint / Keynote / Google Slides 開啟，或另存 PDF 分享
 
 ## 投影片內容指引
 
 每張投影片的文字要精簡：
 - 標題：1 行
-- 內容：3-5 ��重點，每點 1-2 行
+- 內容：3-5 個重點，每點 1-2 行
 - 數據用粗體標示
 - 參考文獻用小字
 - 評讀題目中英對照
@@ -138,7 +144,7 @@ Sonnet 可跑但內容選擇較平、裁圖與除錯較弱，僅適合草稿或 
 簡報產生依照以下順序自動嘗試，每一層失敗時自動進入下一層：
 
 ```
-0. ppt-master（主路線，~/ppt-master）
+0. ppt-master（主路線，$PPT_MASTER_DIR，預設 ~/ppt-master）
    ├── 成功 → 交付 native 可編輯 .pptx（載入使用者範本，最貼合設計）
    └── 不可用 → 進入第 1 層
 1. Canva MCP
@@ -160,7 +166,7 @@ Sonnet 可跑但內容選擇較平、裁圖與除錯較弱，僅適合草稿或 
 1. 將所有投影片資料整理成 JSON 格式（參考 `scripts/generate_pptx.py` 頂部的格式說明）
 2. 每張投影片的 `type` 可以是：`title`、`section`、`content`、`two_column`、`table`
 3. 依照使用者選擇的模板風格設定 `style`：`formal`、`clean`、`teaching`、`competition`
-4. 每張內容投影片的 `section` 欄位設定為當前 5A 階段（ASK/ACQUIRE/APPRAISE/APPLY/AUDIT），自動顯示側邊欄導航
+4. 每張內容投影片的 `section` 欄位設定為當前階段（ASK/ACQUIRE/APPRAISE/APPLY/AUDIT——此 fallback 引擎的側邊欄只支援這 5 段，ANALYSIS 內容併入 ASK），自動顯示側邊欄導航
 5. 將 JSON 寫入暫存檔，執行：
    ```bash
    python3 scripts/generate_pptx.py slides.json PROJECT_DIR/06_slides/ebm-report.pptx
@@ -198,13 +204,14 @@ Sonnet 可跑但內容選擇較平、裁圖與除錯較弱，僅適合草稿或 
 - 投影片標題用**繁體中文**
 - 文獻引用保持**英文**（作者、期刊名）
 - 數據（HR, OR, CI, p-value）保持原文呈現
-- **依照 Fallback 鏈順序**自動選擇產生方式（Canva → python-pptx → Markdown）
+- **依照 Fallback 鏈順序**自動選擇產生方式（ppt-master 主路線 → Canva → python-pptx → Markdown）
 - python-pptx 產出的 .pptx 可在 PowerPoint / Keynote / Google Slides 中自由編輯
 
 ## 檔案產出
 
 - **從 `/ebm` 流程呼叫時：** 將以下檔案寫入 `PROJECT_DIR/06_slides/`：
-  - `slides.json` — 投影片結構化資料（JSON 格式，含每張投影片的 type、title、bullets、section 等）
-  - `ebm-report.pptx` — python-pptx 產生的 PowerPoint 檔案（Fallback 第 2 層時）
+  - `content.json` — 簡報內容（**現行主路線格式**，餵 `gen_journal_svg.py`：cover + slides 的 section／content／figure／table／textcard 頁）
+  - `slides.json` — 舊格式（僅 Fallback 第 2 層 `generate_pptx.py` 使用，含 type、title、bullets、section 等）
+  - `ebm-report.pptx` — 匯出的 PowerPoint 檔案
 - **獨立呼叫 `/ebm-slides` 時：** 先詢問使用者專案名稱（或使用 `projects/` 下最近修改的專案），設定 `PROJECT_DIR` 後再執行。如果目錄不存在，先建立 `projects/<name>/06_slides/`。
 - Markdown fallback 輸出路徑也更新為 `PROJECT_DIR/06_slides/ebm-slides.md`（取代原先的 `output/ebm-slides-{date}.md`）

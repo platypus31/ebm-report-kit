@@ -1,14 +1,15 @@
 [project]
-name = "ebm-report-pipeline"
+name = "ebm-report-kit"
 version = "1.0.0"
 description = "EBM 報告產生器"
 requires-python = ">=3.9"
 dependencies = [
     "pyyaml>=6.0",
+    "pymupdf>=1.23",
+    "python-pptx>=0.6.21",
 ]
 
 [project.optional-dependencies]
-pptx = ["python-pptx>=0.6.21"]
 dev = [
     "pytest>=7.0",
     "ruff>=0.4",

@@ -27,7 +27,7 @@ claude
 > /ebm
 ```
 
-系統會自動建立專案目錄、引導完成 5A 流程、每個步驟產出結構化檔案。
+系統會自動建立專案目錄、引導完成 6A 流程、每個步驟產出結構化檔案。
 
 ### 手動建立專案
 
@@ -74,7 +74,8 @@ projects/<name>/
 ├── 05_audit/                  # AUDIT — 自我評估
 │   └── self_assessment.md     # 五面向自我評估
 └── 06_slides/                 # 簡報輸出
-    ├── slides.json            # 簡報資料（JSON）
+    ├── content.json           # 簡報內容（現行格式，餵 gen_journal_svg.py）
+    ├── slides.json            # 舊格式（build_slide_outline.py → generate_pptx.py fallback 用）
     └── ebm-report.pptx        # PowerPoint 檔案
 ```
 
@@ -95,7 +96,7 @@ projects/<name>/
 
 ## 品質門檻
 
-每個 5A 階段完成時會自動驗證：
+以下 5 個產出階段完成時會自動驗證：
 
 | 階段 | 驗證內容 |
 |------|---------|
@@ -122,14 +123,19 @@ projects/<name>/
 
 `projects/example-sglt2i-ckd/` — SGLT2i 在 CKD 合併糖尿病的完整 EBM 報告範例，展示每個步驟的結構化產出。
 
-## MCP 工具
+## 外部工具（核心流程零 MCP）
 
-本專案使用以下 MCP 工具：
-- **PubMed MCP** — search_articles, get_article_metadata, find_related_articles, get_full_text_article
-- **Playwright MCP** — Cochrane Library 網站搜尋
-- **Clinical Trials MCP** — ClinicalTrials.gov 進行中試驗搜尋
-- **Canva MCP** — 簡報產生
-- **ICD-10 MCP** — 輔助搜尋詞彙查詢
+**主路線 `/ebm-from-paper` 不需要任何 MCP server**——檢索與全文都用 `curl` 直呼公開 API，截圖用 Playwright CLI：
+
+| 用途 | 實作 | 備註 |
+|------|------|------|
+| PubMed 檢索／書目／鄰居文獻 | NCBI E-utilities（curl 直呼） | 免金鑰 |
+| 全文取得 | Europe PMC REST（curl；PMC 直連會被擋） | |
+| PubMed／Cochrane 檢索截圖 | `scripts/pubmed_shot.js`、`scripts/cochrane_search.js`（Playwright） | 需 `npx playwright install chromium` |
+| PDF 圖表抽取／佐證裁圖 | `scripts/extract_figures.py`、`scripts/clip_evidence.py`（PyMuPDF） | |
+| 簡報產出 | `scripts/gen_journal_svg.py` → ppt-master 匯出 native pptx | 見 `docs/ppt-master-integration.md` |
+
+MCP server 一律**選配**：`/lit-search`、`/brainstorm`、`/appraise` 若偵測到 PubMed／Playwright MCP 會優先使用，偵測不到就走上表的內建管道，流程不中斷。
 
 ## 語言規則
 
@@ -149,7 +155,7 @@ ebm-report-kit/
 ├── .github/copilot-instructions.md    # GitHub Copilot 設定
 ├── README.md
 ├── skills/                            # 技能指令（所有平台共用）
-│   ├── ebm.md                         # 完整 5A 流程
+│   ├── ebm.md                         # 完整 6A 流程
 │   ├── brainstorm.md                  # 選題
 │   ├── pico.md                        # PICO 分析
 │   ├── classify.md                    # 問題分類

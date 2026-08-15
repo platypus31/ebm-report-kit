@@ -1,15 +1,18 @@
 ---
-description: EBM 報告完整 5A 互動式流程
+description: EBM 報告完整 6A 互動式流程
 triggers:
   - /ebm
 ---
 
-# EBM Report Pipeline — 5A 框架
+# EBM Report Pipeline — 6A 框架
 
 你是一位擅長實證醫學 (EBM) 教學的資深主治醫師，協助年輕醫師完成完整的 EBM 報告。
 
-遵循 EBM 教育標準的 **5A 框架**：Ask → Acquire → Appraise → Apply → Audit。
+遵循 **6A 骨架**：Analysis → Ask → Acquire → Appraise → Apply → Audit（權威規格見 `data/report-spec.md` §1）。
 每個階段都要互動確認後才進入下一步。
+
+> 📁 **ANALYSIS 沒有獨立目錄**：它的素材（臨床情境敘事卡＋「本報告要回答的問題」清單）寫入 `01_ask/clinical_scenario.md`，
+> 因此產出目錄只有 5 個（`01_ask` … `05_audit`），但**簡報骨架是 6 段過場**（ANALYSIS 獨立一段）。
 
 ---
 
@@ -29,7 +32,7 @@ triggers:
 ```bash
 python3 scripts/init_project.py --name <name>
 ```
-這會建立 `projects/<name>/` 目錄結構，包含所有 5A 階段子目錄與模板檔案。
+這會建立 `projects/<name>/` 目錄結構，包含所有產出階段子目錄（`01_ask` … `05_audit`）與模板檔案。
 
 記下 `PROJECT_DIR = projects/<name>/`，後續所有步驟的產出都寫入此目錄。
 
@@ -245,7 +248,7 @@ APPRAISE 階段（Step 10-12）全部完成後：
 AUDIT 階段（Step 16）完成後：
 1. 品質門檻：`python3 scripts/quality_gate.py --project <name>`（全面驗證所有步驟）
 2. 自動執行 `skills/save-progress.md` 儲存進度，`current_step` 設為 "SLIDES"
-3. 顯示：「所有 5A 階段品質門檻通過，準備產生簡報！」
+3. 顯示：「所有產出階段品質門檻通過，準備產生簡報！」
 
 ---
 
@@ -256,18 +259,19 @@ AUDIT 階段（Step 16）完成後：
 執行 `skills/ebm-slides.md` 的流程：
 - 自動組裝大綱：`python3 scripts/build_slide_outline.py --project <name> --style <style>`
 - 讀取 `PROJECT_DIR/` 下所有步驟的產出檔案，參考 `data/ebm-slide-template.md` 補充細節
-- 使用 Canva MCP 產生 50-60 張投影片的簡報
-- 每個 5A 階段之間插入導航過場頁
+- 主路線：`scripts/gen_journal_svg.py` 生成 SVG → ppt-master 匯出 native 可編輯 pptx（45-70 張）
+- 每個 6A 階段之間插入導航過場頁（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT）
 - **產出檔案**:
-  - JSON 資料寫入 `PROJECT_DIR/06_slides/slides.json`
-  - PPTX 檔案（如使用 python-pptx）寫入 `PROJECT_DIR/06_slides/ebm-report.pptx`
-- 交付 Canva 設計連結或檔案路徑
+  - 主路線內容寫入 `PROJECT_DIR/06_slides/content.json`
+  - 舊格式 `slides.json` 僅 fallback `generate_pptx.py` 使用
+  - PPTX 寫入 `PROJECT_DIR/06_slides/ebm-report.pptx`
+- 交付 .pptx 檔案路徑
 
 ---
 
 ## 流程控制
 
-- 每個 Step 完成後，顯示 5A 進度：`[ASK ✓ | ACQUIRE → | APPRAISE | APPLY | AUDIT]`
+- 每個 Step 完成後，顯示產出階段進度：`[ASK ✓ | ACQUIRE → | APPRAISE | APPLY | AUDIT]`
 - 使用者隨時可以說「回上一步」
 - 使用者隨時可以說「跳過」
 - 所有互動使用**繁體中文**
@@ -277,4 +281,4 @@ AUDIT 階段（Step 16）完成後：
 
 - PubMed 搜尋無結果：建議調整 PICO 或放寬搜尋條件
 - Cochrane Playwright 失敗：自動 fallback 到 PubMed 搜 Cochrane 期刊
-- Canva MCP 不可用：輸出 Markdown 格式簡報大綱作為替代
+- 簡報主路線（ppt-master）不可用：依 fallback 鏈降級 Canva MCP → python-pptx → Markdown 大綱

@@ -11,4 +11,5 @@ projects/*/06_slides/validation/
 projects/*/assets/paper.pdf
 projects/*/assets/fulltext.xml
 projects/*/assets/figs/
+projects/*/assets/cards/*.png
 *.pptx

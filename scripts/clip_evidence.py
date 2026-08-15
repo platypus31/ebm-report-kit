@@ -3,8 +3,8 @@
 
 範本文體的靈魂是「每個評讀答案配原文截圖＋紅線」（report-spec.md §1-5）——本工具把這步機械化。
 
-用法（用 ppt-master venv 跑，有 pymupdf）：
-  PY=~/ppt-master/.venv/bin/python
+用法（用 ppt-master venv 跑，有 pymupdf；ppt-master 位置＝$PPT_MASTER_DIR，預設 ~/ppt-master）：
+  PY="${PPT_MASTER_DIR:-$HOME/ppt-master}"/.venv/bin/python
   $PY scripts/clip_evidence.py paper.pdf --search "doubly-robust inverse propensity" -o out.png
   $PY scripts/clip_evidence.py paper.pdf --search "531 033 individuals" --pad-above 30 --pad-below 60 -o out.png
   $PY scripts/clip_evidence.py paper.pdf --page 8 --rect 0.05,0.33,0.95,0.82 -o fig2.png   # 手動比例裁（抓 Figure 用）

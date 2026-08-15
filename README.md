@@ -25,8 +25,16 @@
 
 - [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code)（或其他相容 AI CLI：repo 內含 AGENTS.md／GEMINI.md 設定）
 - Python 3.9+；`pymupdf`（PDF 處理，建議裝在 venv）
-- [ppt-master](https://github.com/hugohe3/ppt-master)（SVG → 可編輯 pptx 匯出引擎；裝在 `~/ppt-master`）
-- Node.js＋Playwright（`npx playwright install chromium`——Cochrane/PubMed 截圖與圖卡生成）
+- [ppt-master](https://github.com/hugohe3/ppt-master)（SVG → 可編輯 pptx 匯出引擎，預設裝在 `~/ppt-master`）：
+
+  ```bash
+  git clone --depth 1 https://github.com/hugohe3/ppt-master.git
+  cd ppt-master && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+  ```
+
+  ⚠️ 資產庫約 1.2GB，建議 `--depth 1`；裝在 `~/ppt-master` 以外的位置請設環境變數 `PPT_MASTER_DIR`。
+- Node.js：`npm install`（安裝 Playwright），再跑 `npx playwright install chromium`——Cochrane/PubMed 截圖與圖卡生成
+- 部分固定素材（6S 金字塔、OCEBM 等級表等）因版權不隨 repo 附帶，`data/assets/` 需自備（詳 `skills/ebm-from-paper.md` 工具箱表）
 
 ### 使用
 

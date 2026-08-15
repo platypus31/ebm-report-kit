@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Journal Reading 簡報生成器 —— 程式生成「取 White Grey 風」的 SVG deck（2026-08-12 定案格式）。
 
-風格：白底 + 灰色流線波紋裝飾 + serif 大寫標題 + 條列式大字內容 + 大寫 section 過場 + 圖表頁。
-內容來源：/jr pipeline 從 journal 原文抽取（英文為主），寫成 content.json 後餵進本工具。
+本 repo（ebm-report-kit）為 EBM 報告用，內容**中文為主**；引擎與 journal-reading-kit 同源、各自獨立維護。
 
-用法（用 ppt-master venv 跑，之後 svg_to_pptx 也用同 venv）：
-    ~/ppt-master/.venv/bin/python scripts/gen_journal_svg.py <content.json> <svg_output_dir>
+風格：白底 + 灰色流線波紋裝飾 + serif 大寫標題 + 條列式大字內容 + 大寫 section 過場 + 圖表頁。
+內容來源：EBM pipeline 從論文抽取後改寫（中文為主），寫成 content.json 後餵進本工具。
+
+用法（用 ppt-master venv 跑，之後 svg_to_pptx 也用同 venv；ppt-master 位置＝$PPT_MASTER_DIR，預設 ~/ppt-master）：
+    "${PPT_MASTER_DIR:-$HOME/ppt-master}"/.venv/bin/python scripts/gen_journal_svg.py <content.json> <svg_output_dir>
 
 content.json 格式：
 {
@@ -16,7 +18,7 @@ content.json 格式：
     {"kind": "figure",   "title": "Results — Key Figure", "caption": "圖說", "path": "figs/figures/p05_img12.png"}
   ]
 }
-🔴 內容以英文為主（從 journal 原文截取），bullet 精簡（gate 會擋過長溢出）；bullet 內用 raw & / < / >，esc() 會統一轉義。
+🔴 內容以中文為主（數據／檢索式／文獻引用保留英文原文），bullet 精簡（gate 會擋過長溢出）；bullet 內用 raw & / < / >，esc() 會統一轉義。
 """
 import base64
 import glob

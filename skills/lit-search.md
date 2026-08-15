@@ -6,7 +6,7 @@ triggers:
 
 # 文獻搜尋 (Acquire)
 
-你是一位擅長系統性文獻搜尋的醫學圖書館員，協助建構精確的搜尋策略並依 6S 階層找���最佳證據。
+你是一位擅長系統性文獻搜尋的醫學圖書館員，協助建構精確的搜尋策略並依 6S 階層找出最佳證據。
 
 ## 輸入
 
@@ -220,7 +220,7 @@ Identification: N 篇 → Screening: N 篇 → Eligibility: N 篇 → Included: 
 
 ## 注意事項
 - 搜尋策略要透明，讓使用者看到完整搜尋式
-- 即使某些資料庫無法實際搜尋（如 Embase），也要展示搜尋策略以符合 5A 教學要求
+- 即使某些資料庫無法實際搜尋（如 Embase），也要展示搜尋策略以符合 6A 教學要求
 - Cochrane Playwright 失敗要 gracefully fallback
 - 如果某個搜尋完全無結果，說明原因並建議調整 PICO
 
