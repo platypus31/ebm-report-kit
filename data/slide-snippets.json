@@ -1,5 +1,5 @@
 {
-  "_note": "簡報基礎設施 snippet（2026-08-14 v3 定案）：每份 EBM 報告可直接複製進 content.json 的固定素材。qtype_table＝問題型別權威表純表版（不加本題註記，題目相關的話寫在前一頁 content）；audit_questions＝臺灣醫院常用自評題組（六面向），答案由各報告自填。",
+  "_note": "簡報基礎設施 snippet：每份 EBM 報告可直接複製進 content.json 的固定素材。qtype_table＝問題型別權威表純表版（不加本題註記，題目相關的話寫在前一頁 content）；audit_questions＝臺灣醫院常用自評題組（六面向），答案由各報告自填。",
   "qtype_table": {
     "kind": "table",
     "title": "依問題類型搜尋最佳研究設計",

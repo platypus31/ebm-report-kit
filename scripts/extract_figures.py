@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """從 journal PDF 抽出統計圖表（forest plot / KM curve / Table 圖等），供簡報配圖。
 
-2026-08-12 校準：簡報要放論文裡的實際圖表，不能純文字。
+簡報要放論文裡的實際圖表，不要只有純文字。
 
 用法（需 PyMuPDF；建議用 ppt-master 的 venv 跑，位置＝$PPT_MASTER_DIR，預設 ~/ppt-master）：
     "${PPT_MASTER_DIR:-$HOME/ppt-master}"/.venv/bin/python scripts/extract_figures.py <paper.pdf> -o <outdir>

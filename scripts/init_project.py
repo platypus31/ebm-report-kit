@@ -6,7 +6,7 @@
     python3 scripts/init_project.py --name <project-name>
     python3 scripts/init_project.py --name sglt2i-ckd --department 腎臟內科
 
-建立 projects/<project-name>/ 目錄，包含所有 5A 階段的子目錄與模板檔案。
+建立 projects/<project-name>/ 目錄，包含所有產出階段的子目錄（01_ask…06_slides、assets/screenshots）與模板檔案。
 """
 
 import argparse

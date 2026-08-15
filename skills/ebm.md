@@ -4,7 +4,7 @@ triggers:
   - /ebm
 ---
 
-# EBM Report Pipeline — 6A 框架
+# EBM Report Kit — 6A 互動式流程
 
 你是一位擅長實證醫學 (EBM) 教學的資深主治醫師，協助年輕醫師完成完整的 EBM 報告。
 
@@ -21,20 +21,24 @@ triggers:
 在開始前，先確認工作環境：
 
 ### 0a. 檢查既有專案
-掃描 `projects/` 目錄，列出已有的專案（排除 `example-*`）。
+掃描 `projects/` 目錄，列出已有的專案（排除 `example-*`，那是隨 repo 附帶的兩個範例）。
 - **有專案** → 問使用者：繼續既有專案 or 建立新專案
 - **無專案** → 進入 Step 0b
 
-也檢查 `output/` 目錄是否有舊版 `ebm-*.json` 進度檔案（向下相容）。
+也檢查 `output/` 目錄是否有舊版 `ebm-*.json` 進度檔案（向下相容；`output/` 為選配，不存在是正常的）。
 
 ### 0b. 建立新專案
 詢問使用者專案名稱（英文、用 - 連接），然後執行：
 ```bash
 python3 scripts/init_project.py --name <name>
 ```
-這會建立 `projects/<name>/` 目錄結構，包含所有產出階段子目錄（`01_ask` … `05_audit`）與模板檔案。
+這會建立 `projects/<name>/` 完整目錄結構：`01_ask`／`02_acquire`／`03_appraise`／`04_apply`／`05_audit`／`06_slides`／`assets/screenshots`，以及模板檔案。
 
-記下 `PROJECT_DIR = projects/<name>/`，後續所有步驟的產出都寫入此目錄。
+記下 `PROJECT_DIR = projects/<name>/`，後續所有步驟的產出都寫入此目錄。**要在 shell 指令裡用它時，設成絕對路徑**：
+
+```bash
+PROJECT_DIR="$PWD/projects/<name>"
+```
 
 ---
 
@@ -120,9 +124,9 @@ ASK 階段（Step 4-7）全部完成後：
 - 可用 `python3 scripts/build_search_query.py --project <name>` 自動建構搜尋式
 - **產出檔案**: 寫入 `PROJECT_DIR/02_acquire/search_strategy.md`
 
-**依 6S 階層搜尋：**
-1. Secondary Database: UpToDate, DynaMed, Cochrane Library
-2. Primary Database: PubMed, Embase
+**依 6S 階層搜尋**（完整六層與各層做法見 `skills/lit-search.md` §2）：
+1. **必備**：Cochrane Library（Syntheses）＋ PubMed（Studies）——兩者都有免帳號的內建管道
+2. **有機構訂閱才做**：UpToDate／DynaMed（Systems／Summaries）、Embase、華藝；沒帳號就整段省略，不放佔位頁
 
 **搜尋過程：**
 - 根據 PICO MeSH terms + 問題類型 filter 建構搜尋策略
@@ -235,13 +239,14 @@ APPRAISE 階段（Step 10-12）全部完成後：
 
 - **產出檔案**: 寫入 `PROJECT_DIR/05_audit/self_assessment.md`
 
-引導使用者以 checklist 逐項反思五大面向：
+引導使用者以 checklist 逐項反思**五大面向＋效率評估**（完整題庫在 `data/slide-snippets.json` 的 `audit_questions`）：
 
-1. **提出臨床問題**：問題是否重要？是否明確？是否清楚定位？
-2. **搜尋最佳證據**：是否盡全力？知道最佳來源？多資料庫搜尋？
-3. **搜尋技巧**：布林邏輯、MeSH term、limiters 使用？
-4. **應用到臨床**：是否應用證據？能否向病人解釋？
-5. **改變醫療行為**：是否改變決策？花費時間？
+1. **提出臨床問題**：問題是否重要？是否明確？是否清楚定位（診斷／治療／預後／流行病學）？
+2. **搜尋最佳證據**：是否盡全力？是否從多個資料庫搜尋？搜尋技巧是否愈來愈熟練？
+3. **嚴格評讀文獻**：是否盡全力評讀？是否理解 NNT、Likelihood Ratio、worksheet 各項的意義？
+4. **應用到病人身上**：是否應用證據？能否向病人解釋？
+5. **改變醫療行為**：是否改變決策？
+6. **效率評估**：整個流程花了多少時間？哪一段最耗時？（時數留白由使用者自填）
 
 ### 品質門檻 — APPLY + AUDIT 完成
 
@@ -256,15 +261,19 @@ AUDIT 階段（Step 16）完成後：
 
 ### Step 17 — 產生簡報
 
-執行 `skills/ebm-slides.md` 的流程：
-- 自動組裝大綱：`python3 scripts/build_slide_outline.py --project <name> --style <style>`
-- 讀取 `PROJECT_DIR/` 下所有步驟的產出檔案，參考 `data/ebm-slide-template.md` 補充細節
-- 主路線：`scripts/gen_journal_svg.py` 生成 SVG → ppt-master 匯出 native 可編輯 pptx（45-70 張）
-- 每個 6A 階段之間插入導航過場頁（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT）
-- **產出檔案**:
-  - 主路線內容寫入 `PROJECT_DIR/06_slides/content.json`
-  - 舊格式 `slides.json` 僅 fallback `generate_pptx.py` 使用
-  - PPTX 寫入 `PROJECT_DIR/06_slides/ebm-report.pptx`
+執行 `skills/ebm-slides.md` §3 的**五步流程**（那裡是可直接複製執行的權威版本）：
+
+1. 讀 `PROJECT_DIR/` 下 01～05 各步的產出檔案，依 `data/report-spec.md` §1（骨架）與 §2（張數配比）
+   **手寫**成 `PROJECT_DIR/06_slides/content.json`（骨架範例：`data/example-content-ebm.json`）。
+   🔴 `content.json` 沒有自動產生器——它需要判斷哪些內容進哪一頁，這一步由 AI 依素材組裝。
+2. 每個 6A 階段之間插入 `section` 導航過場頁（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT）。
+3. `scripts/gen_journal_svg.py` 生成 SVG → ppt-master 品質關卡 → 匯出 native 可編輯 pptx（總數 45-70 張）。
+
+- **產出檔案**：
+  - `PROJECT_DIR/06_slides/content.json` — 主路線內容（現行格式）
+  - `PROJECT_DIR/06_slides/ebm-report.pptx` — 匯出的簡報
+  - `PROJECT_DIR/06_slides/slides.json` — **只在走 fallback 時才需要**，用
+    `python3 scripts/build_slide_outline.py --project <name> --style <style>` 產生後餵給 `scripts/generate_pptx.py`
 - 交付 .pptx 檔案路徑
 
 ---

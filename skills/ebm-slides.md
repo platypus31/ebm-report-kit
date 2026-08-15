@@ -24,13 +24,16 @@ triggers:
 
 ## 執行流程
 
-### 1. 簡報格式（已定案，不再詢問風格）
+### 1. 簡報格式（固定，不詢問風格）
 
-🔴 **2026-08-12 定案：格式固定為「White Grey 取風格版」**（白底＋灰流線波紋裝飾＋serif 大寫標題＋條列式大字＋大寫 section 過場＋圖表頁），與 journal-reading pipeline 共用同一格式引擎——**不再呈現 A/B/C/D 風格選項**。舊 `data/templates/style-*` 僅供 fallback `generate_pptx.py` 使用。
+格式固定為 **White Grey**：白底＋灰流線波紋裝飾＋serif 大寫標題＋條列式大字＋大寫 section 過場＋圖表頁。
+**不要向使用者呈現 A/B/C/D 風格選項**——`data/templates/style-*` 只供 fallback 的 `generate_pptx.py` 使用。
+使用者想換風格時，指向 README「自訂風格與模板」段（PowerPoint 直接改／ppt-master 套範本／改引擎三條路）。
 
 ### 2. 整理簡報大綱
 
-根據選定模板的段落配置和 `data/ebm-slide-template.md` 的結構，整理所有資料為投影片大綱。
+依 `data/report-spec.md` §1（6A 骨架硬規格）與 §2（各段張數配比）整理所有資料為投影片大綱。
+（`data/ebm-slide-template.md` 是舊版 5A 快速骨架，兩者衝突時以 report-spec 為準。）
 
 **讀取專案結構化檔案：** 從 `PROJECT_DIR` 讀取各步驟產出的檔案作為簡報素材：
 - `01_ask/pico.yaml` — PICO 分析與問題分類
@@ -64,61 +67,84 @@ triggers:
 
 關鍵要素：
 - 每個 6A 階段之間插入**導航過場頁**（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT，依模板風格）
-- 評讀段落佔最大篇幅（約 35%）
-- 投影片張數依模板而異（Style B: 40-50 張, Style D: 55-70 張）
+- 評讀段落佔最大篇幅（35% 上下，偏離 ±10% 回頭檢查是否漏段）
+- 總張數落點 **45-70 張**（依 `data/report-spec.md` §2 的逐段配比）
 
 向使用者展示完整大綱，確認內容和順序。
 
-### 3. 產生簡報（定案主路線：gen_journal_svg 格式引擎 → ppt-master export）
+### 3. 產生簡報（主路線：gen_journal_svg 格式引擎 → ppt-master 匯出）
 
-格式引擎已 vendor 於本 repo：`scripts/gen_journal_svg.py`（與 journal-reading-kit 同源、**各自獨立**，兩 repo 互不依賴）。
-實戰驗收案例：BMJ GLP-1RA 23 頁成品（2026-08-12 使用者拍板）。
+格式引擎在本 repo 內：`scripts/gen_journal_svg.py`（與 journal-reading-kit 同源、各自獨立，兩 repo 互不依賴）。
 
-**內容規則（使用者 2026-08-14 拍板改版）**：**EBM pipeline 中文為主**——敘事/評論/臨床場景/臨床回覆用中文，評讀題目中英對照，檢索式/MeSH/數據（OR/HR/CI/p）保持英文原文；journal pipeline 維持英文為主，**兩者引擎相同、各自獨立維護**。內容結構照 `data/report-spec.md` §4 統一規格（6A 骨架＋分型評讀）；**條列式精簡 bullet**（過長會被 gate 擋，生成器會自動拆行）；一頁 3-5 條。
+**內容規則**：**中文為主**——敘事／評論／臨床場景／臨床回覆用中文，評讀題目中英對照，
+檢索式／MeSH／數據（OR/HR/CI/p）保持英文原文。
+內容結構照 `data/report-spec.md`：§1 骨架硬規格、§2 張數配比、§3 分型評讀、§4 紅線。
+**條列式精簡 bullet**（過長會被品質關卡擋，生成器會自動拆行），一頁 3-5 條。
 
-**五步流程**（ppt-master 安裝位置用環境變數 `PPT_MASTER_DIR` 覆寫，預設 `~/ppt-master`）：
+**五步流程**。先在 repo 根目錄設好三個變數，後面每一步都直接可用（路徑一律絕對路徑，
+所以第 4/5 步切到 ppt-master 目錄也不會找不到檔案）：
 
 ```bash
-PPT_MASTER="${PPT_MASTER_DIR:-$HOME/ppt-master}"
-PY="$PPT_MASTER/.venv/bin/python"
+PPT_MASTER="${PPT_MASTER_DIR:-$HOME/ppt-master}"   # ppt-master 位置，預設 ~/ppt-master
+PY="$PPT_MASTER/.venv/bin/python"                  # ppt-master 的 venv（有 pymupdf）
+PROJECT_DIR="$PWD/projects/<name>"                 # 換成你的專案名，須為絕對路徑
 ```
 
-1. **組內容** → 依 `data/example-content-ebm.json` 骨架把各步產出寫成 `PROJECT_DIR/06_slides/content.json`（cover + slides：**section 過場用 6A 大寫**（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT；ANALYSIS 素材取自 `01_ask/clinical_scenario.md`，無獨立目錄）+ content 條列頁 + figure 圖表頁）
-2. **抽圖表** → 選定文獻的 PDF 用 `scripts/extract_figures.py <pdf> -o <dir>` 抽 forest plot/KM curve；截圖（`assets/screenshots.json` 的 PubMed/評讀截圖）直接以 `path` 欄位嵌入 figure 頁。⚠️ 全向量圖期刊（BMJ 等）抽出的是整頁 render，需再用 `fitz` clip 按比例精裁圖區（dpi=200），裁完看縮圖確認無殘字
-3. **生成 SVG** → `$PY scripts/gen_journal_svg.py content.json <project>/svg_output`
-4. **品質關卡** → `cd "$PPT_MASTER" && $PY skills/ppt-master/scripts/svg_quality_checker.py <project> --quick-generate --stage final --json`（rc≠0 修到過；gate 讀舊快取時換新目錄重跑）
-5. **導出** → `$PY "$PPT_MASTER"/skills/ppt-master/scripts/svg_to_pptx.py <project> -o PROJECT_DIR/06_slides/ebm-report.pptx --quick-generate`（🔴 **rc=0 且 `ls` 確認檔案存在才算完成**）
+1. **組內容** → 依 `data/example-content-ebm.json` 骨架，把各步產出寫成 `$PROJECT_DIR/06_slides/content.json`
+   （cover + slides：**section 過場用 6A 大寫**（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT；
+   ANALYSIS 素材取自 `01_ask/clinical_scenario.md`，它沒有獨立目錄）＋ content 條列頁 ＋ figure/table/textcard 頁）
+2. **抽圖表** → 選定文獻的 PDF 抽 forest plot／KM curve，截圖以 `path` 欄位嵌入 figure 頁：
 
-**備選**：ppt-master Fill Native PPTX 硬套使用者提供的 .pptx 範本（使用者已判硬套會不搭，僅明確要求時用）。**主路線不可用時依序 fallback**：Canva MCP → python-pptx → Markdown（見下）。
+   ```bash
+   "$PY" scripts/extract_figures.py "$PROJECT_DIR/assets/paper.pdf" -o "$PROJECT_DIR/assets/figs"
+   ```
 
----
+   ⚠️ 全向量圖期刊（BMJ 等）抽出的是整頁 render，需再用 `scripts/clip_evidence.py --page --rect`
+   按比例精裁圖區，裁完看縮圖確認無殘字。
+3. **生成 SVG**（引擎只用標準庫，用系統 python3 即可）：
 
-### 模型建議（使用者 2026-08-12 指示記錄）
+   ```bash
+   python3 scripts/gen_journal_svg.py "$PROJECT_DIR/06_slides/content.json" "$PROJECT_DIR/06_slides/svg_output"
+   ```
 
-版面/風格品質已鎖在 `gen_journal_svg.py` 腳本內（模型無關）；**模型層級影響的是判斷工作**：
-原文內容截取與濃縮、fitz clip 裁圖目測、gate 失敗除錯。
-🔴 **品質敏感的正式報告：用 Fable 5 / Opus 5 跑**（BMJ GLP-1RA 實戰驗收 = Fable 5）；
-Sonnet 可跑但內容選擇較平、裁圖與除錯較弱，僅適合草稿或 headless 批次；
-夜班 headless 跑到 gate 卡住時不要降級硬闖，留給白天強模型 session。
+4. **品質關卡**（rc≠0 就修到過；gate 讀到舊快取時換一個新的 svg_output 目錄重跑）：
+
+   ```bash
+   (cd "$PPT_MASTER" && "$PY" skills/ppt-master/scripts/svg_quality_checker.py \
+       "$PROJECT_DIR/06_slides" --quick-generate --stage final --json)
+   ```
+
+5. **匯出 pptx**（🔴 **rc=0 且 `ls` 確認檔案存在才算完成**）：
+
+   ```bash
+   (cd "$PPT_MASTER" && "$PY" skills/ppt-master/scripts/svg_to_pptx.py \
+       "$PROJECT_DIR/06_slides" -o "$PROJECT_DIR/06_slides/ebm-report.pptx" --quick-generate)
+   ls -la "$PROJECT_DIR/06_slides/ebm-report.pptx"
+   ```
+
+   第 4／5 步都吃「含 `svg_output/` 的目錄」，所以傳的是 `$PROJECT_DIR/06_slides` 而不是專案根目錄。
+
+**主路線不可用時依序 fallback**：Canva MCP → python-pptx → Markdown（見下）。
+想套自己的 .pptx 範本走 ppt-master Fill Native PPTX，見 `docs/ppt-master-integration.md` §3A。
 
 ### 3b. Fallback 第 1 層 — 產生 Canva 簡報
 
-使用 Canva MCP 的三步驟流程：
+需先設定 Canva MCP（本 repo 的 `.mcp.json` 已註冊 server 名 `canva`；未設定就直接跳到第 2 層）。三步驟流程：
 
 **Step A — 提交大綱審核:**
-呼叫 `mcp__claude_ai_Canva__request-outline-review`:
+呼叫 `mcp__canva__request-outline-review`:
 - topic: EBM 報告標題（繁體中文，150 字以內）
 - pages: 每張投影片的標題和內容要點
 - 依模板風格描述設計需求（配色、排版、導航方式）
 
 **Step B — 生成設計:**
-呼叫 `mcp__claude_ai_Canva__generate-design-structured`:
+呼叫 `mcp__canva__generate-design-structured`:
 - design_type: "presentation"
 - 使用經過確認的大綱
 - 融入模板風格描述
 
 **Step C — 建立設計:**
-呼叫 `mcp__claude_ai_Canva__create-design-from-candidate`:
+呼叫 `mcp__canva__create-design-from-candidate`:
 - 使用者選擇喜歡的設計方案
 - 取得最終 Canva 設計連結
 
@@ -127,7 +153,7 @@ Sonnet 可跑但內容選擇較平、裁圖與除錯較弱，僅適合草稿或 
 交付 native 可編輯 `.pptx`（`PROJECT_DIR/06_slides/ebm-report.pptx`），提醒使用者：
 - 文字、表格、紅框皆為 PowerPoint 原生物件，可直接改字、拉框、換色
 - 截圖已自動存入 `PROJECT_DIR/assets/screenshots/`，可直接拖入簡報
-- 檢查截圖完整性：`python3 scripts/screenshot.py --project <name> --check`
+- 檢查截圖完整性（在 repo 根目錄執行）：`python3 scripts/screenshot.py --project <name> --check`
 - 可用 PowerPoint / Keynote / Google Slides 開啟，或另存 PDF 分享
 
 ## 投影片內容指引
@@ -144,8 +170,8 @@ Sonnet 可跑但內容選擇較平、裁圖與除錯較弱，僅適合草稿或 
 簡報產生依照以下順序自動嘗試，每一層失敗時自動進入下一層：
 
 ```
-0. ppt-master（主路線，$PPT_MASTER_DIR，預設 ~/ppt-master）
-   ├── 成功 → 交付 native 可編輯 .pptx（載入使用者範本，最貼合設計）
+0. gen_journal_svg → ppt-master 匯出（主路線，$PPT_MASTER_DIR，預設 ~/ppt-master）
+   ├── 成功 → 交付 native 可編輯 .pptx（White Grey 版面，文字/表格/紅框皆原生物件）
    └── 不可用 → 進入第 1 層
 1. Canva MCP
    ├── 成功 → 交付 Canva 設計連結

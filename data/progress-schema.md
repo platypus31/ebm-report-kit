@@ -151,7 +151,7 @@
 | `appraisal` | object / null | 否 | 評讀結果 |
 | `application` | object / null | 否 | 臨床應用 |
 | `self_assessment` | object / null | 否 | 自我評估 |
-| `template_style` | string / null | 否 | 簡報風格：formal / clean / teaching / competition |
+| `template_style`（已廢止，保留相容） | string / null | 否 | 簡報風格：formal / clean / teaching / competition |
 
 ## 步驟對應
 

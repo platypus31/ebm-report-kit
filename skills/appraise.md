@@ -44,21 +44,29 @@ triggers:
 
 #### 截圖方式
 
-**首選 — Playwright MCP 自動截圖：**
+**首選 — 從 PDF 直接裁佐證圖（內建腳本，零 MCP）：**
 
-評讀開始前，先開啟文獻全文頁面：
-- PMC 全文：`mcp__plugin_playwright_playwright__browser_navigate` → `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC<id>/`
-- 期刊網站全文：直接開啟 DOI 連結
+拿到全文 PDF 後（取得管道見 `skills/ebm-from-paper.md` §0；PMC 官網直連會被擋，走 Europe PMC），
+每一題用 `scripts/clip_evidence.py` 搜關鍵句 → 自動雙欄偵測 → 裁該欄 → 關鍵句畫紅框：
 
-每一題評讀時：
-1. 用 `mcp__plugin_playwright_playwright__browser_snapshot` 定位相關段落
-2. 用 `mcp__plugin_playwright_playwright__browser_click` 或 JavaScript 滾動到對應位置
-3. 用 `mcp__plugin_playwright_playwright__browser_screenshot` 截取該段落
-4. 截圖存入 `PROJECT_DIR/assets/screenshots/`，記錄到 `screenshots.json`
+```bash
+PPT_MASTER="${PPT_MASTER_DIR:-$HOME/ppt-master}"
+PY="$PPT_MASTER/.venv/bin/python"      # 或 kit 自己的 .venv/bin/python，兩者都有 pymupdf
+"$PY" scripts/clip_evidence.py "$PROJECT_DIR/assets/paper.pdf" \
+    --search "inverse propensity weighting" \
+    -o "$PROJECT_DIR/assets/figs/ev-q5.png"
+```
 
-**Fallback — 截圖指引（Playwright 不可用時）：**
+🔴 **搜尋句用 3-6 字的短片語，不要整句**——PDF 內文有換行與連字號，長句幾乎必定搜不到。
+跨欄長段落改用多個短句：`--search A --search B`。
+截圖存入 `PROJECT_DIR/assets/figs/`（或 `assets/screenshots/`），記錄到 `screenshots.json`。
 
-如果無法自動截圖（Playwright MCP 不可用、無全文存取等），在每題評讀的佐證後面附上**截圖指引**，告訴報告人應該去哪裡截圖：
+**選配 — Playwright MCP 截網頁版全文**：若環境已掛載 Playwright MCP，也可導覽期刊網站或 Europe PMC
+頁面截圖（工具名依你的 MCP 設定而異）。
+
+**Fallback — 截圖指引（拿不到全文 PDF 時）：**
+
+如果無法自動裁圖（無全文存取等），在每題評讀的佐證後面附上**截圖指引**，告訴報告人應該去哪裡截圖：
 
 ```
 📸 截圖指引：請到全文 Methods 第 3 段（"Randomization" 小標題處），
@@ -130,7 +138,7 @@ triggers:
 
 每個 Domain 判定：Low risk / Some concerns / High risk of bias
 
-### 4. 評讀結果總結
+### 3. 評讀結果總結
 
 整理為總結表格：
 
@@ -149,7 +157,7 @@ Section C (Applicability): [適用 / 部分適用 / 不適用]
 OCEBM Level of Evidence: [Level 1-5]
 ```
 
-### 5. 研究結果呈現
+### 4. 研究結果呈現
 
 詳細整理文獻的關鍵結果：
 - Primary outcome + 數據
@@ -159,7 +167,7 @@ OCEBM Level of Evidence: [Level 1-5]
 - HR / OR / RR + 95% CI + p-value
 - 重要圖表描述（Forest Plot, Kaplan-Meier, ROC 等）
 
-### 6. GRADE 評定（選擇性）
+### 5. GRADE 評定（選擇性）
 
 如使用者需要，進行 GRADE 評定：
 - 從 High 開始

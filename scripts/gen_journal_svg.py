@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Journal Reading 簡報生成器 —— 程式生成「取 White Grey 風」的 SVG deck（2026-08-12 定案格式）。
+"""簡報生成器 —— 程式生成「White Grey」風格的 SVG deck。
 
 本 repo（ebm-report-kit）為 EBM 報告用，內容**中文為主**；引擎與 journal-reading-kit 同源、各自獨立維護。
 

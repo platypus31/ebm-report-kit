@@ -28,7 +28,7 @@ triggers:
 - `appraisal`: 評讀結果（工具、逐題結果、總結）
 - `application`: 臨床應用（證據等級、在地考量、臨床回覆）
 - `self_assessment`: 自我評估結果
-- `template_style`: 選定的簡報風格
+- `template_style`: 舊欄位（簡報風格已固定為 White Grey，不再詢問；保留只為讀舊進度檔相容）
 
 ### 2. 決定儲存路徑
 

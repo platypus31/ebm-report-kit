@@ -42,35 +42,43 @@ AND [問題類型對應的 publication type filter]
 
 #### Cochrane Library 搜尋
 
-**首選方法 — Playwright:**
-1. `mcp__plugin_playwright_playwright__browser_navigate` 到 `https://www.cochranelibrary.com/search`
-2. `mcp__plugin_playwright_playwright__browser_snapshot` 檢視頁面
-3. 在搜尋框填入 PICO 關鍵字
-4. `mcp__plugin_playwright_playwright__browser_click` 執行搜尋
-5. `mcp__plugin_playwright_playwright__browser_snapshot` 擷取結果
-6. **📸 截圖：** `mcp__plugin_playwright_playwright__browser_screenshot` 截取搜尋結果頁面，存為 `PROJECT_DIR/assets/screenshots/cochrane-search-{timestamp}.png`
+**首選方法 — 內建腳本（零 MCP）**：Cochrane 的結果是 portlet AJAX 載入，直接 GET 帶參數只會拿到空殼，
+所以用本 repo 的 Playwright 腳本走真實互動（進首頁 → 填搜尋框 → Enter → 等結果元素）：
 
-**備用方法 — PubMed 搜 Cochrane 期刊:**
-如果 Playwright 失敗，使用 `search_articles`:
+```bash
+node scripts/cochrane_search.js "<自然語詞 query>" "$PROJECT_DIR/assets/screenshots/cochrane-search.png"
+```
+
+輸出 Reviews／Trials 兩個計數＋結果頁截圖。**0 篇照登**，不要跳過或改寫成別的數字。
+
+**備用方法 — PubMed 搜 Cochrane 期刊**（腳本不可用時）：
 - query: `[PICO terms] AND "Cochrane Database Syst Rev"[Journal]`
+- 若環境有 Playwright MCP，也可用它導覽 `https://www.cochranelibrary.com/search` 截圖（工具名依你的 MCP 設定而異）。
 
 #### PubMed 搜尋
 
-**首選方法 — PubMed MCP:**
-使用 `mcp__claude_ai_PubMed__search_articles`:
-- query: 上述組合搜尋式
-- max_results: 20
-- sort: relevance
+**首選方法 — E-utilities（curl 直呼，零 MCP、免金鑰）：**
 
-使用 `mcp__claude_ai_PubMed__get_article_metadata` 取得每篇詳細資訊。
+```bash
+# 計數（調式時 retmax=0 最快）
+curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=0&term=<urlencode 檢索式>"
+# 正式跑：拿 idlist 確認目標文獻在結果內
+curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=40&sort=relevance&term=<urlencode 檢索式>"
+# 逐篇書目
+curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&retmode=json&id=<id1,id2,…>"
+```
 
-**搜尋完成後截圖：**
-1. 開啟 PubMed 搜尋結果頁面：`mcp__plugin_playwright_playwright__browser_navigate` 到 `https://pubmed.ncbi.nlm.nih.gov/?term={URL_encoded_query}`
-2. **📸 截圖搜尋結果：** `mcp__plugin_playwright_playwright__browser_screenshot` → 存為 `PROJECT_DIR/assets/screenshots/pubmed-search-{timestamp}.png`
-3. 如有設定篩選器（Article Type / Date 等），展開篩選面板後再截一張：
-   **📸 截圖篩選器：** → 存為 `PROJECT_DIR/assets/screenshots/pubmed-filters-{timestamp}.png`
+連續呼叫之間 `sleep 1` 防限流。檢索式可用 `python3 scripts/build_search_query.py` 從 `pico.yaml` 自動建構。
 
-**Fallback 方法 — WebSearch + WebFetch（PubMed MCP 不可用時）:**
+**搜尋完成後截圖 — 內建腳本：**
+
+```bash
+node scripts/pubmed_shot.js "<檢索式>" "$PROJECT_DIR/assets/screenshots/pubmed-search.png"
+```
+
+如有設定篩選器（Article Type／Date 等），展開篩選面板後再截一張存成 `pubmed-filters.png`。
+
+**Fallback 方法 — WebSearch + WebFetch（沒有網路指令可用時）:**
 
 1. **WebSearch 搜尋 PubMed:**
    - 使用 `WebSearch` 工具，設定 `allowed_domains: ["pubmed.ncbi.nlm.nih.gov"]`
@@ -87,7 +95,7 @@ AND [問題類型對應的 publication type filter]
    - 放寬 publication type filter
    - 移除 C (Comparison) 的限制
 
-每次使用 fallback 時，告知使用者：「PubMed MCP 不可用，已使用 [WebSearch/E-utilities API] 搜尋。」
+每次使用 fallback 時，告知使用者實際用了哪個管道，讓檢索過程可重現。
 
 #### Embase（說明性）
 
@@ -101,10 +109,13 @@ AND [問題類型對應的 publication type filter]
 
 ### 3. 補充：ClinicalTrials.gov（選擇性）
 
-使用 `mcp__claude_ai_Clinical_Trials__search_trials`:
-- condition: P 的描述
-- intervention: I 的描述
-- status: RECRUITING, ACTIVE_NOT_RECRUITING
+查進行中試驗（無 MCP 時用官方 API）：
+
+```bash
+curl -s "https://clinicaltrials.gov/api/v2/studies?query.cond=<P>&query.intr=<I>&filter.overallStatus=RECRUITING,ACTIVE_NOT_RECRUITING"
+```
+
+若環境有 Clinical Trials MCP 也可改用它（工具名依你的 MCP 設定而異）。
 
 ### 4. PRISMA 篩選流程
 
