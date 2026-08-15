@@ -3,6 +3,7 @@
 __pycache__/
 output/
 node_modules/
+.venv/
 .claude/*
 !.claude/commands/
 # 產物不入庫（跑 skill 時自動生成）
