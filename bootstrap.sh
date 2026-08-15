@@ -16,6 +16,7 @@ PPT_MASTER="${PPT_MASTER_DIR:-${HOME}/ppt-master}"
 VENV_PY="${KIT_DIR}/.venv/bin/python"
 VENV_PIP="${KIT_DIR}/.venv/bin/pip"
 PASS=0; FAIL=0; SKIP=0
+REQMISS=0  # 必裝依賴缺失——--check-only 時不算 FAIL 但不得宣告就緒
 
 say()  { printf '%s\n' "$*"; }
 ok()   { PASS=$((PASS+1)); say "  ✅ $*"; }
@@ -49,6 +50,7 @@ if [ "${CHECK_ONLY}" = "1" ]; then
     ok ".venv 已就緒（pymupdf/python-pptx/pyyaml/pytest 皆可 import）"
   else
     note ".venv 未就緒（去掉 --check-only 重跑即可安裝）"
+    REQMISS=1
   fi
 else
   if [ ! -x "${VENV_PY}" ]; then
@@ -78,8 +80,10 @@ if [ "${CHECK_ONLY}" = "1" ]; then
     ok "node_modules 與 chromium 皆已就緒"
   elif [ -d "${KIT_DIR}/node_modules/playwright" ]; then
     note "node_modules 已裝，但 chromium 尚未下載（去掉 --check-only 重跑，或 npx playwright install chromium）"
+    REQMISS=1
   else
     note "尚未 npm install（去掉 --check-only 重跑即可安裝）"
+    REQMISS=1
   fi
 elif command -v npm >/dev/null 2>&1; then
   if (cd "${KIT_DIR}" && npm install --silent); then
@@ -106,6 +110,7 @@ if [ -d "${PPT_MASTER}/.git" ]; then
 else
   if [ "${CHECK_ONLY}" = "1" ]; then
     note "ppt-master 未安裝（去掉 --check-only 重跑即可自動 clone，約 1.2GB）"
+    REQMISS=1
   else
     say "  ⏳ clone ppt-master（資產庫約 1.2GB，--depth 1，需數分鐘）..."
     if git clone --depth 1 https://github.com/hugohe3/ppt-master.git "${PPT_MASTER}"; then
@@ -161,11 +166,15 @@ rm -rf "${SELFCHECK_OUT}"
 
 say ""
 say "== 結果：✅ ${PASS} ｜ ❌ ${FAIL} ｜ ⚠️ ${SKIP} =="
-if [ "${FAIL}" -eq 0 ]; then
+if [ "${FAIL}" -eq 0 ] && [ "${REQMISS}" -eq 0 ]; then
   say "🎉 就緒。下一步：在本目錄啟動你的 AI CLI（如 claude），輸入："
   say "     /ebm-from-paper 33693636      # 已選好文獻 → 反推整份報告（最常用）"
   say "     /ebm                          # 從臨床問題出發，互動式走完整 6A"
   exit 0
+elif [ "${FAIL}" -eq 0 ] && [ "${REQMISS}" -eq 1 ]; then
+  say "⚠️  尚未就緒：必裝依賴未備妥（詳見上方 ⚠️ 訊息）—— 跑到簡報匯出會失敗。"
+  say "   跑 \`bash bootstrap.sh\`（不加 --check-only）即可自動裝好。"
+  exit 1
 else
   say "還有 ❌ 項目要處理（見上），修完重跑本腳本即可（冪等）。"
   exit 1

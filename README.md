@@ -15,7 +15,7 @@
 ## 產出特色
 
 - **6A 完整結構**：臨床情境敘事卡 → 背景衛教 → PICO 表 → 檢索過程（含 PRISMA）→ CASP 逐題評讀（每題附原文截圖＋紅框）→ OCEBM 等級 → SDM → 白話臨床回覆 → 自我評估
-- **可編輯**：表格、文字卡、紅框都是 PowerPoint 原生物件，匯出後可直接改字、拉框
+- **可編輯**：文字、表格、紅框匯出後都可直接改字、拉框（表格以向量圖形＋文字框繪製，不是 PowerPoint 表格物件，增刪列請改 content.json 重匯）
 - **誠實原則**：檢索數字全部真跑可重現；評讀不確定的題留給人確認；查不到的數字明標不編造
 - 內容結構規格見 `data/report-spec.md`；名詞與公式權威見 `data/glossary.md`
 
@@ -30,7 +30,7 @@ bash bootstrap.sh          # 一鍵裝依賴 + 自我驗證（冪等，可重複
 裝完後在同一個目錄啟動 AI CLI：
 
 ```bash
-claude
+claude   # 首次啟動會詢問 .mcp.json 的 Canva MCP 授權——它只是選配 fallback，拒絕也不影響主流程
 > /ebm-from-paper 33693636
 ```
 
@@ -89,7 +89,7 @@ bash bootstrap.sh --check-only
 
 常見問題：「可以換成我們科的版型嗎？」三條路，由簡到繁：
 
-1. **直接在 PowerPoint 改（推薦）**——產出是 native 可編輯 pptx，文字、表格、紅框都是原生物件。
+1. **直接在 PowerPoint 改（推薦）**——產出是 native 可編輯 pptx，文字可直接改、物件可拉動。
    套用自家佈景主題、改字型配色、換 logo 都在 PowerPoint 裡做，不必碰程式碼。
 2. **用 ppt-master 的 Fill Native PPTX 硬套自有範本**（備選）——把你的 .pptx 當母片填內容，
    接法見 `docs/ppt-master-integration.md`。版面契合度取決於範本結構，請自行評估效果。
