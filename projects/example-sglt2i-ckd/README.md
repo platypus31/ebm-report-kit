@@ -21,5 +21,5 @@ SGLT2 抑制劑在 CKD 合併第二型糖尿病患者的腎臟保護效果
 
 本範例的 `06_slides/slides.json` 為**舊 slides.json 格式**（僅 fallback `scripts/generate_pptx.py` 使用）。
 **現行主路線格式**是 `content.json`（餵 `scripts/gen_journal_svg.py` → ppt-master 匯出 native pptx），
-範例見 `projects/pcv13-covid19/06_slides/content.json`。
+範例見 `projects/example-pcv13-covid19/06_slides/content.json`。
 

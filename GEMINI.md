@@ -24,12 +24,15 @@ EBM（實證醫學）報告產生器——丟論文反推整份 6A 報告的可�
 ### 快速開始
 
 ```bash
+git clone https://github.com/platypus31/ebm-report-kit.git
 cd ebm-report-kit
+bash bootstrap.sh        # 一鍵裝依賴 + self-check（冪等；--check-only 只檢查不安裝）
 claude
-> /ebm
+> /ebm-from-paper 33693636    # 最常用：文獻已選好 → 反推整份報告
+> /ebm                        # 或從臨床問題出發，互動式走完整 6A
 ```
 
-系統會自動建立專案目錄、引導完成 6A 流程、每個步驟產出結構化檔案。
+`/ebm` 會自動建立專案目錄、引導完成 6A 流程、每個步驟產出結構化檔案。
 
 ### 手動建立專案
 
@@ -74,7 +77,12 @@ projects/<name>/
 │   ├── local_considerations.md # 台灣在地化考量
 │   └── clinical_reply.md      # 去學術化臨床回覆
 ├── 05_audit/                  # AUDIT — 自我評估
-│   └── self_assessment.md     # 五面向自我評估
+│   └── self_assessment.md     # 五面向自評＋效率評估
+├── assets/                    # 素材
+│   ├── paper.pdf              # 論文全文（gitignore）
+│   ├── screenshots/           # 檢索/評讀截圖
+│   ├── screenshots.json       # 截圖清單
+│   └── figs/                  # 抽出的圖表與佐證裁圖（gitignore）
 └── 06_slides/                 # 簡報輸出
     ├── content.json           # 簡報內容（現行格式，餵 gen_journal_svg.py）
     ├── slides.json            # 舊格式（build_slide_outline.py → generate_pptx.py fallback 用）
@@ -92,7 +100,14 @@ projects/<name>/
 | `scripts/generate_prisma_flow.py` | 產生 PRISMA 篩選流程圖 |
 | `scripts/dedupe_results.py` | 候選文獻去重（依 PMID → DOI → 標題相似度） |
 | `scripts/export_appraisal.py` | 將評讀 JSON 匯出為結構化 CSV |
-| `scripts/build_slide_outline.py` | 從專案檔案自動組裝 slides.json |
+| `scripts/gen_journal_svg.py` | **簡報主引擎**：content.json → White Grey SVG deck |
+| `scripts/clip_evidence.py` | 評讀佐證裁圖（搜關鍵句→裁該欄→畫紅框） |
+| `scripts/extract_figures.py` | 從論文 PDF 抽統計圖表 |
+| `scripts/pubmed_shot.js` | PubMed 結果頁截圖＋計數（Playwright） |
+| `scripts/cochrane_search.js` | Cochrane 搜尋計數＋截圖（Playwright） |
+| `scripts/html2png.js` | HTML 圖卡轉 PNG（示意圖用） |
+| `scripts/screenshot.py` | 截圖清單管理與完整性檢查 |
+| `scripts/build_slide_outline.py` | 從專案檔案組裝舊格式 slides.json（僅 fallback 用） |
 | `scripts/generate_pptx.py` | python-pptx fallback 簡報產生器 |
 | `scripts/status.py` | 專案進度儀表板 |
 
@@ -123,7 +138,12 @@ projects/<name>/
 
 ## 範例專案
 
-`projects/example-sglt2i-ckd/` — SGLT2i 在 CKD 合併糖尿病的完整 EBM 報告範例，展示每個步驟的結構化產出。
+- **`projects/example-pcv13-covid19/`** — `/ebm-from-paper` 反向流程的完整實跑產出（PMID 33693636，預防型問題、CASP Cohort）。
+  `06_slides/content.json` 是**現行主路線格式**的權威範例。
+- `projects/example-sglt2i-ckd/` — SGLT2i 在 CKD 合併糖尿病的報告範例，展示 01～05 各步的結構化產出。
+  ⚠️ 它的 `06_slides/slides.json` 是**舊格式**（僅 fallback 用）。
+
+掃描 `projects/` 列出使用者專案時，兩個範例都要排除。
 
 ## 外部工具（核心流程零 MCP）
 
@@ -156,7 +176,9 @@ ebm-report-kit/
 ├── .cursorrules                       # Cursor 設定
 ├── .github/copilot-instructions.md    # GitHub Copilot 設定
 ├── README.md
+├── bootstrap.sh                       # 一鍵安裝依賴 + self-check
 ├── skills/                            # 技能指令（所有平台共用）
+│   ├── ebm-from-paper.md              # 反向入口（最常用）
 │   ├── ebm.md                         # 完整 6A 流程
 │   ├── brainstorm.md                  # 選題
 │   ├── pico.md                        # PICO 分析
@@ -167,6 +189,12 @@ ebm-report-kit/
 │   ├── save-progress.md               # 儲存進度
 │   └── load-progress.md               # 載入進度
 ├── scripts/                           # 實體腳本（所有平台共用）
+│   ├── gen_journal_svg.py             # 簡報主引擎（content.json → SVG）
+│   ├── clip_evidence.py               # 評讀佐證裁圖＋紅框
+│   ├── extract_figures.py             # 從 PDF 抽統計圖表
+│   ├── pubmed_shot.js                 # PubMed 截圖（Playwright）
+│   ├── cochrane_search.js             # Cochrane 搜尋＋截圖（Playwright）
+│   ├── html2png.js                    # HTML 圖卡轉 PNG
 │   ├── init_project.py                # 初始化專案
 │   ├── validate_step.py               # 驗證步驟產出
 │   ├── quality_gate.py                # 品質門檻驗證
@@ -174,19 +202,28 @@ ebm-report-kit/
 │   ├── generate_prisma_flow.py        # PRISMA 流程圖
 │   ├── dedupe_results.py              # 文獻去重
 │   ├── export_appraisal.py            # 匯出評讀 CSV
-│   ├── build_slide_outline.py         # 自動組裝簡報大綱
-│   ├── generate_pptx.py              # PowerPoint 產生器
+│   ├── screenshot.py                  # 截圖清單管理
+│   ├── build_slide_outline.py         # 組裝舊格式 slides.json（fallback 用）
+│   ├── generate_pptx.py               # python-pptx fallback 產生器
 │   ├── generate_platform_config.py    # 跨平台設定產生器
 │   └── status.py                      # 專案進度儀表板
 ├── data/                              # 參考資料（所有平台共用）
+│   ├── report-spec.md                 # 🔴 內容結構權威（6A 骨架/張數/分型/紅線）
+│   ├── glossary.md                    # 名詞與公式權威
+│   ├── example-content-ebm.json       # content.json 骨架範例
+│   ├── slide-snippets.json            # 固定題組（型別權威表、自評題庫）
 │   ├── departments.md                 # 科別 MeSH 對照表
 │   ├── study-type-hierarchy.md        # 證據層級
 │   ├── appraisal-tools.md             # 評讀工具對照表
-│   ├── ebm-slide-template.md          # 簡報結構範本
+│   ├── ebm-slide-template.md          # 舊版 5A 快速骨架（衝突時以 report-spec 為準）
 │   ├── progress-schema.md             # 進度 JSON schema
-│   ├── references/                    # 結構化模板
-│   └── templates/                     # 簡報設計模板
+│   ├── assets/                        # 自備固定素材（版權圖不隨 repo 附帶）
+│   ├── references/                    # CASP 檢核表 CSV、PICO 模板
+│   └── templates/                     # style-a~d（僅 fallback generate_pptx.py 用）
+├── docs/
+│   └── ppt-master-integration.md      # ppt-master 安裝後的接法詳解
 ├── projects/                          # 專案目錄
-│   └── example-sglt2i-ckd/            # 範例專案
+│   ├── example-pcv13-covid19/         # 範例：反向流程完整實跑（現行 content.json 格式）
+│   └── example-sglt2i-ckd/            # 範例：01～05 結構化產出（舊 slides.json 格式）
 └── tests/                             # 測試
 ```
