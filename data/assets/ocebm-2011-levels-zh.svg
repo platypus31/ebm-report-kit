@@ -17,143 +17,145 @@
 <circle cx="162" cy="70" r="13" fill="#6B7280" opacity="0.8"/>
 <text x="90" y="120" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#1A1A1A" text-anchor="start" letter-spacing="1.2">牛津實證醫學中心 2011 證據等級表</text>
 <line x1="90" y1="145" x2="1190" y2="145" stroke="#C4C9D0" stroke-width="2"/>
-<rect x="95" y="168" width="219" height="23" fill="#F7F8FA" stroke="#B0B6BE" stroke-width="1"/>
-<rect x="314" y="168" width="189" height="23" fill="#545B64" stroke="#B0B6BE" stroke-width="1"/>
-<text x="408.17817014446234" y="183" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.3">建議等級 A</text>
-<rect x="503" y="168" width="390" height="23" fill="#6B7280" stroke="#B0B6BE" stroke-width="1"/>
-<text x="697.7367576243983" y="183" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.3">建議等級 B</text>
-<rect x="893" y="168" width="184" height="23" fill="#868D96" stroke="#B0B6BE" stroke-width="1"/>
-<text x="984.6709470304977" y="183" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.3">建議等級 C</text>
-<rect x="1077" y="168" width="108" height="23" fill="#A6ACB4" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1130.762439807384" y="183" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#1A1D21" text-anchor="middle" letter-spacing="0.3">建議等級 D</text>
-<rect x="95" y="191" width="219" height="24" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
-<text x="100" y="207" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">臨床問題</text>
-<rect x="314" y="191" width="189" height="24" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
-<text x="318.6998394863564" y="207" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 1*</text>
-<rect x="503" y="191" width="184" height="24" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
-<text x="507.6565008025683" y="207" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 2*</text>
-<rect x="686" y="191" width="206" height="24" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
-<text x="691.3643659711076" y="207" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 3*</text>
-<rect x="893" y="191" width="184" height="24" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
-<text x="897.8170144462281" y="207" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 4*</text>
-<rect x="1077" y="191" width="108" height="24" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1081.5248796147675" y="207" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 5*</text>
-<rect x="95" y="215" width="219" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="100" y="231" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">此臨床問題多常見？</text>
-<rect x="314" y="215" width="189" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="318.6998394863564" y="231" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">區域及當代隨機樣本的（人口）</text>
-<text x="318.6998394863564" y="245" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">普查</text>
-<rect x="503" y="215" width="184" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="507.6565008025683" y="231" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">切合當地環境普查的系統性回</text>
-<text x="507.6565008025683" y="245" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">顧**</text>
-<rect x="686" y="215" width="206" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="691.3643659711076" y="231" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">區域性非隨機樣本調查**</text>
-<rect x="893" y="215" width="184" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="897.8170144462281" y="231" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告**</text>
-<rect x="1077" y="215" width="108" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1081.5248796147675" y="231" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n/a</text>
-<rect x="95" y="253" width="219" height="38" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="100" y="269" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">診斷或監測工具正確嗎？（診斷）</text>
-<rect x="314" y="253" width="189" height="38" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="318.6998394863564" y="269" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">使用一致的參考（黃金）標準及</text>
-<text x="318.6998394863564" y="283" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">盲化的斷代研究的系統性回顧</text>
-<rect x="503" y="253" width="184" height="38" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="507.6565008025683" y="269" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">使用一致的參考（黃金）標準及</text>
-<text x="507.6565008025683" y="283" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">盲化的斷代研究</text>
-<rect x="686" y="253" width="206" height="38" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="691.3643659711076" y="269" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">非連續性研究，或沒有使用一致的參</text>
-<text x="691.3643659711076" y="283" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">考（黃金）標準的研究**</text>
-<rect x="893" y="253" width="184" height="38" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="897.8170144462281" y="269" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">病例對照試驗，低品質或無獨立</text>
-<text x="897.8170144462281" y="283" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">參考標準的研究**</text>
-<rect x="1077" y="253" width="108" height="38" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1081.5248796147675" y="269" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">基於基本原理的</text>
-<text x="1081.5248796147675" y="283" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">推斷</text>
-<rect x="95" y="291" width="219" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="100" y="307" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">如果不治療會有什麼後果？（預後）</text>
-<rect x="314" y="291" width="189" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="318.6998394863564" y="307" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">初期（inception）世代研究的系</text>
-<text x="318.6998394863564" y="321" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">統性回顧</text>
-<rect x="503" y="291" width="184" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="507.6565008025683" y="307" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">初期（inception）世代研究</text>
-<rect x="686" y="291" width="206" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="691.3643659711076" y="307" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">世代研究，或隨機對照研究的控制</text>
-<text x="691.3643659711076" y="321" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">組**</text>
-<rect x="893" y="291" width="184" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="897.8170144462281" y="307" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告，病例對照試驗，</text>
-<text x="897.8170144462281" y="321" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">或低品質的預後型世代研究**</text>
-<rect x="1077" y="291" width="108" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1081.5248796147675" y="307" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n/a</text>
-<rect x="95" y="329" width="219" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="100" y="345" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">這個介入治療有幫助嗎？（治療益處）</text>
-<rect x="314" y="329" width="189" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="318.6998394863564" y="345" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗（RCT）或隨機序列</text>
-<text x="318.6998394863564" y="359" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">治療試驗（n-of-1）的系統性回</text>
-<text x="318.6998394863564" y="373" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">顧</text>
-<rect x="503" y="329" width="184" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="507.6565008025683" y="345" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗，或有顯著療效的</text>
-<text x="507.6565008025683" y="359" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">觀察型研究</text>
-<rect x="686" y="329" width="206" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="691.3643659711076" y="345" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">非隨機控制的世代／追蹤研究**</text>
-<rect x="893" y="329" width="184" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="897.8170144462281" y="345" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告，病例對照試驗，</text>
-<text x="897.8170144462281" y="359" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">或歷史對照試驗**</text>
-<rect x="1077" y="329" width="108" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1081.5248796147675" y="345" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">基於基本原理的</text>
-<text x="1081.5248796147675" y="359" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">推斷</text>
-<rect x="95" y="381" width="219" height="66" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="100" y="397" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">介入治療的常見害處？（治療傷害）</text>
-<rect x="314" y="381" width="189" height="66" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="318.6998394863564" y="397" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗（RCT）、巢式病例</text>
-<text x="318.6998394863564" y="411" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">對照試驗、隨機序列治療試驗</text>
-<text x="318.6998394863564" y="425" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">（n-of-1）或有顯著療效的觀察型</text>
-<text x="318.6998394863564" y="439" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">研究的系統性回顧</text>
-<rect x="503" y="381" width="184" height="66" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="507.6565008025683" y="397" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗，或有顯著傷害的</text>
-<text x="507.6565008025683" y="411" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">異常觀察型研究</text>
-<rect x="686" y="381" width="206" height="66" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="691.3643659711076" y="397" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">非隨機控制的世代／追蹤研究（上市</text>
-<text x="691.3643659711076" y="411" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">後監測），提供足夠樣本數排除常見</text>
-<text x="691.3643659711076" y="425" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">危害（長期危害需有足夠追蹤時</text>
-<text x="691.3643659711076" y="439" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">間）**</text>
-<rect x="893" y="381" width="184" height="66" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="897.8170144462281" y="397" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告，病例對照試驗，</text>
-<text x="897.8170144462281" y="411" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">或歷史對照試驗**</text>
-<rect x="1077" y="381" width="108" height="66" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1081.5248796147675" y="397" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">基於基本原理的</text>
-<text x="1081.5248796147675" y="411" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">推斷</text>
-<rect x="95" y="447" width="219" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="100" y="463" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">介入治療的罕見害處？（治療傷害）</text>
-<rect x="314" y="447" width="189" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="318.6998394863564" y="463" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗（RCT）或隨機序列</text>
-<text x="318.6998394863564" y="477" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">治療試驗（n-of-1）的系統性回</text>
-<text x="318.6998394863564" y="491" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">顧</text>
-<rect x="503" y="447" width="184" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="507.6565008025683" y="463" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗，或有顯著傷害的</text>
-<text x="507.6565008025683" y="477" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">異常觀察型研究</text>
-<rect x="686" y="447" width="206" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="691.3643659711076" y="463" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
-<rect x="893" y="447" width="184" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="897.8170144462281" y="463" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
-<rect x="1077" y="447" width="108" height="52" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1081.5248796147675" y="463" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
-<rect x="95" y="499" width="219" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="100" y="515" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">值得早期診斷嗎？（篩檢）</text>
-<rect x="314" y="499" width="189" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="318.6998394863564" y="515" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗（RCT）的系統性回</text>
-<text x="318.6998394863564" y="529" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">顧</text>
-<rect x="503" y="499" width="184" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="507.6565008025683" y="515" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗</text>
-<rect x="686" y="499" width="206" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="691.3643659711076" y="515" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">非隨機控制的世代／追蹤研究**</text>
-<rect x="893" y="499" width="184" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="897.8170144462281" y="515" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告，病例對照試驗，</text>
-<text x="897.8170144462281" y="529" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">或歷史對照試驗**</text>
-<rect x="1077" y="499" width="108" height="38" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1081.5248796147675" y="515" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">基於基本原理的</text>
-<text x="1081.5248796147675" y="529" font-family="Georgia, serif" font-size="11" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">推斷</text>
-<text x="90" y="555" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">* 可因研究品質不佳、不精確、間接性（研究 PICO 與問題 PICO 不符）、研究間不一致或絕對效應量極小而降級；效應量大則可升級。</text>
-<text x="90" y="573" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">** 系統性回顧通常優於單一研究。</text>
-<text x="90" y="591" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">建議等級 A-D 為中文教學版對應等級 1-5 的慣例標示，非 OCEBM 2011 原表欄位。</text>
+<rect x="95" y="168" width="219" height="24" fill="#F7F8FA" stroke="#B0B6BE" stroke-width="1"/>
+<rect x="314" y="168" width="189" height="24" fill="#545B64" stroke="#B0B6BE" stroke-width="1"/>
+<text x="408.17817014446234" y="184" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.3">建議等級 A</text>
+<rect x="503" y="168" width="390" height="24" fill="#6B7280" stroke="#B0B6BE" stroke-width="1"/>
+<text x="697.7367576243983" y="184" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.3">建議等級 B</text>
+<rect x="893" y="168" width="184" height="24" fill="#868D96" stroke="#B0B6BE" stroke-width="1"/>
+<text x="984.6709470304977" y="184" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.3">建議等級 C</text>
+<rect x="1077" y="168" width="108" height="24" fill="#A6ACB4" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1130.762439807384" y="184" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#1A1D21" text-anchor="middle" letter-spacing="0.3">建議等級 D</text>
+<rect x="95" y="192" width="219" height="25" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
+<text x="100" y="209" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">臨床問題</text>
+<rect x="314" y="192" width="189" height="25" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
+<text x="318.6998394863564" y="209" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 1*</text>
+<rect x="503" y="192" width="184" height="25" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
+<text x="507.6565008025683" y="209" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 2*</text>
+<rect x="686" y="192" width="206" height="25" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
+<text x="691.3643659711076" y="209" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 3*</text>
+<rect x="893" y="192" width="184" height="25" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
+<text x="897.8170144462281" y="209" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 4*</text>
+<rect x="1077" y="192" width="108" height="25" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1081.5248796147675" y="209" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">證據等級 5*</text>
+<rect x="95" y="217" width="219" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="100" y="234" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">此臨床問題多常見？</text>
+<rect x="314" y="217" width="189" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="318.6998394863564" y="234" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">區域及當代隨機樣本的（人口）</text>
+<text x="318.6998394863564" y="249" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">普查</text>
+<rect x="503" y="217" width="184" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="507.6565008025683" y="234" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">切合當地環境普查的系統性回</text>
+<text x="507.6565008025683" y="249" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">顧**</text>
+<rect x="686" y="217" width="206" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="691.3643659711076" y="234" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">區域性非隨機樣本調查**</text>
+<rect x="893" y="217" width="184" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="897.8170144462281" y="234" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告**</text>
+<rect x="1077" y="217" width="108" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1081.5248796147675" y="234" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n/a</text>
+<rect x="95" y="257" width="219" height="40" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="100" y="274" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">診斷或監測工具正確嗎？（診斷）</text>
+<rect x="314" y="257" width="189" height="40" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="318.6998394863564" y="274" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">使用一致的參考（黃金）標準及</text>
+<text x="318.6998394863564" y="289" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">盲化的斷代研究的系統性回顧</text>
+<rect x="503" y="257" width="184" height="40" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="507.6565008025683" y="274" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">使用一致的參考（黃金）標準</text>
+<text x="507.6565008025683" y="289" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">及盲化的斷代研究</text>
+<rect x="686" y="257" width="206" height="40" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="691.3643659711076" y="274" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">非連續性研究，或沒有使用一致的</text>
+<text x="691.3643659711076" y="289" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">參考（黃金）標準的研究**</text>
+<rect x="893" y="257" width="184" height="40" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="897.8170144462281" y="274" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">病例對照試驗，低品質或無獨</text>
+<text x="897.8170144462281" y="289" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">立參考標準的研究**</text>
+<rect x="1077" y="257" width="108" height="40" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1081.5248796147675" y="274" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">基於基本原理的</text>
+<text x="1081.5248796147675" y="289" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">推斷</text>
+<rect x="95" y="297" width="219" height="55" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="100" y="314" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">如果不治療會有什麼後果？（預後）</text>
+<rect x="314" y="297" width="189" height="55" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="318.6998394863564" y="314" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">初期（inception）世代研究的</text>
+<text x="318.6998394863564" y="329" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系統性回顧</text>
+<rect x="503" y="297" width="184" height="55" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="507.6565008025683" y="314" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">初期（inception）世代研究</text>
+<rect x="686" y="297" width="206" height="55" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="691.3643659711076" y="314" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">世代研究，或隨機對照研究的控制</text>
+<text x="691.3643659711076" y="329" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">組**</text>
+<rect x="893" y="297" width="184" height="55" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="897.8170144462281" y="314" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告，病例對照試</text>
+<text x="897.8170144462281" y="329" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">驗，或低品質的預後型世代研</text>
+<text x="897.8170144462281" y="344" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">究**</text>
+<rect x="1077" y="297" width="108" height="55" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1081.5248796147675" y="314" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n/a</text>
+<rect x="95" y="352" width="219" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="100" y="369" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">這個介入治療有幫助嗎？（治療益</text>
+<text x="100" y="384" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">處）</text>
+<rect x="314" y="352" width="189" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="318.6998394863564" y="369" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗（RCT）或隨機序</text>
+<text x="318.6998394863564" y="384" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">列治療試驗（n-of-1）的系統性</text>
+<text x="318.6998394863564" y="399" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">回顧</text>
+<rect x="503" y="352" width="184" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="507.6565008025683" y="369" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗，或有顯著療效</text>
+<text x="507.6565008025683" y="384" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">的觀察型研究</text>
+<rect x="686" y="352" width="206" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="691.3643659711076" y="369" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">非隨機控制的世代／追蹤研究**</text>
+<rect x="893" y="352" width="184" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="897.8170144462281" y="369" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告，病例對照試</text>
+<text x="897.8170144462281" y="384" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">驗，或歷史對照試驗**</text>
+<rect x="1077" y="352" width="108" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1081.5248796147675" y="369" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">基於基本原理的</text>
+<text x="1081.5248796147675" y="384" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">推斷</text>
+<rect x="95" y="407" width="219" height="70" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="100" y="424" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">介入治療的常見害處？（治療傷害）</text>
+<rect x="314" y="407" width="189" height="70" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="318.6998394863564" y="424" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗（RCT）、巢式病</text>
+<text x="318.6998394863564" y="439" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">例對照試驗、隨機序列治療試驗</text>
+<text x="318.6998394863564" y="454" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">（n-of-1）或有顯著療效的觀察</text>
+<text x="318.6998394863564" y="469" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">型研究的系統性回顧</text>
+<rect x="503" y="407" width="184" height="70" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="507.6565008025683" y="424" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗，或有顯著傷害</text>
+<text x="507.6565008025683" y="439" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">的異常觀察型研究</text>
+<rect x="686" y="407" width="206" height="70" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="691.3643659711076" y="424" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">非隨機控制的世代／追蹤研究（上</text>
+<text x="691.3643659711076" y="439" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">市後監測），提供足夠樣本數排除</text>
+<text x="691.3643659711076" y="454" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">常見危害（長期危害需有足夠追蹤</text>
+<text x="691.3643659711076" y="469" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">時間）**</text>
+<rect x="893" y="407" width="184" height="70" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="897.8170144462281" y="424" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告，病例對照試</text>
+<text x="897.8170144462281" y="439" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">驗，或歷史對照試驗**</text>
+<rect x="1077" y="407" width="108" height="70" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1081.5248796147675" y="424" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">基於基本原理的</text>
+<text x="1081.5248796147675" y="439" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">推斷</text>
+<rect x="95" y="477" width="219" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="100" y="494" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">介入治療的罕見害處？（治療傷害）</text>
+<rect x="314" y="477" width="189" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="318.6998394863564" y="494" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗（RCT）或隨機序</text>
+<text x="318.6998394863564" y="509" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">列治療試驗（n-of-1）的系統性</text>
+<text x="318.6998394863564" y="524" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">回顧</text>
+<rect x="503" y="477" width="184" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="507.6565008025683" y="494" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗，或有顯著傷害</text>
+<text x="507.6565008025683" y="509" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">的異常觀察型研究</text>
+<rect x="686" y="477" width="206" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="691.3643659711076" y="494" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
+<rect x="893" y="477" width="184" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="897.8170144462281" y="494" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
+<rect x="1077" y="477" width="108" height="55" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1081.5248796147675" y="494" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
+<rect x="95" y="532" width="219" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="100" y="549" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">值得早期診斷嗎？（篩檢）</text>
+<rect x="314" y="532" width="189" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="318.6998394863564" y="549" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗（RCT）的系統性</text>
+<text x="318.6998394863564" y="564" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">回顧</text>
+<rect x="503" y="532" width="184" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="507.6565008025683" y="549" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">隨機對照試驗</text>
+<rect x="686" y="532" width="206" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="691.3643659711076" y="549" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">非隨機控制的世代／追蹤研究**</text>
+<rect x="893" y="532" width="184" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="897.8170144462281" y="549" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">系列病例報告，病例對照試</text>
+<text x="897.8170144462281" y="564" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">驗，或歷史對照試驗**</text>
+<rect x="1077" y="532" width="108" height="40" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1081.5248796147675" y="549" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">基於基本原理的</text>
+<text x="1081.5248796147675" y="564" font-family="Georgia, serif" font-size="12" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">推斷</text>
+<text x="90" y="590" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">* 可因研究品質不佳、不精確、間接性（研究 PICO 與問題 PICO 不符）、研究間不一致或絕對效應量極小而降級；效應量大則可升級。</text>
+<text x="90" y="608" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">** 系統性回顧通常優於單一研究。</text>
+<text x="90" y="626" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">建議等級 A-D 為中文教學版對應等級 1-5 的慣例標示，非 OCEBM 2011 原表欄位。</text>
 <text x="90" y="700" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">依 Oxford CEBM《The Oxford 2011 Levels of Evidence》公開內容自繪；中文為本 kit 自行翻譯</text>
 </svg>

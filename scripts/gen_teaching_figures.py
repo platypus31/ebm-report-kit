@@ -61,7 +61,7 @@ def source_note(s, name, text, fs=15):
     單行寬 1301px > 畫布 1280）。往上長的代價是會侵入 caption 帶，所以另立 `NOTE_TOP_LIMIT` 守住
     （`check_overflow` 只驗「往下」那一邊，對這裡完全沒有訊號）。
     """
-    lines = wrap(text, int((MARGIN_R - MARGIN_L) / (fs * 0.52)) - KINSOKU_SLACK)
+    lines = wrap_fit(text, int((MARGIN_R - MARGIN_L) / (fs * 0.52)))
     y = NOTE_Y - (len(lines) - 1) * (fs + 5)
     if y < NOTE_TOP_LIMIT:
         sys.stderr.write(f"WARN {name}：出處註記 {len(lines)} 行，首行 y={y} 高過 {NOTE_TOP_LIMIT}，"
@@ -96,16 +96,24 @@ _NO_LINE_START = "）〕］｝〉》」』】、，。．：；？！%‰°℃)]
 _NO_LINE_END = "（〔［｛〈《「『【([{<"
 
 
+KINSOKU_MAX_SHIFT = 2   # wrap() 每行最多把前一行尾端搬幾個字下來（實測六張圖會用到第 2 次）
+
+
+def text_units(s):
+    """全形 2 單位、半形 1 單位——與 cjk_wrap 同一把尺。"""
+    return sum(2 if ord(ch) > 0x2E80 else 1 for ch in str(s))
+
+
 def wrap(s, units):
     """cjk_wrap ＋ 禁則處理。
 
     斷行本身沿用引擎的 `cjk_wrap`（全形 2 單位／半形 1 單位），這裡只做「把違規標點連同前一個字
-    一起推到下一行」。因為推字只會讓上一行變短、下一行變長，呼叫端必須先預留 1 個全形字的餘裕
-    （見 `draw_table` 的 KINSOKU_SLACK），推下去才不會撞破欄寬。
+    一起推到下一行」。⚠️ 推字會讓下一行變長、可能超出 `units`——本函式**不保證**行寬，
+    要保證請用 `wrap_fit()`。
     """
     lines = [str(x) for x in cjk_wrap(s, units)]
     for i in range(1, len(lines)):
-        for _ in range(2):  # 最多搬兩次，避免連續標點造成無限迴圈
+        for _ in range(KINSOKU_MAX_SHIFT):  # 有上限才不會被連續標點拖成無限迴圈
             prev, cur = lines[i - 1], lines[i]
             bad_start = cur and cur[0] in _NO_LINE_START
             bad_end = prev and prev[-1] in _NO_LINE_END
@@ -116,7 +124,27 @@ def wrap(s, units):
     return [ln for ln in lines if ln] or [""]
 
 
-KINSOKU_SLACK = 2  # 禁則推字最多讓一行多出 1 個全形字＝2 單位，量測時先扣掉
+def wrap_fit(s, units):
+    """斷行＋禁則，並**保證**每一行都真的塞得進 units。
+
+    禁則推字會讓下一行變寬，天真作法是量測時一律預留餘裕；但餘裕是按最壞情況算的，
+    窄欄付不起——實測 OCEBM 英文表的 Step 5 欄（108px）在預留 4 單位後只剩 9 單位，
+    連 "Mechanism-based" 都放不下而被逐字硬切，整張表被逼到最小字級還是溢出。
+    改成「推完再量，超寬才用更窄的寬度重斷」：不觸發禁則的欄位一次就過、零成本，
+    只有真的被推寬的欄位才付出縮一點的代價。
+    """
+    lines = wrap(s, units)
+    for shrink in range(1, 2 * KINSOKU_MAX_SHIFT + 1):
+        if all(text_units(ln) <= units for ln in lines):
+            return lines
+        lines = wrap(s, units - shrink)
+        if units - shrink < 4:
+            break
+    if all(text_units(ln) <= units for ln in lines):
+        return lines
+    # 欄窄到禁則怎麼縮都塞不下（實測 units<6 的極窄欄）：寧可留下孤標點也不要超寬——
+    # 超寬是橫向出血，ppt-master 會判 blocking error；孤標點只是難看。
+    return [str(x) for x in cjk_wrap(s, units)]
 
 
 def _measure(rows_text, widths, fs, lh, pad):
@@ -125,8 +153,8 @@ def _measure(rows_text, widths, fs, lh, pad):
     for row in rows_text:
         lines = []
         for i, cell in enumerate(row):
-            units = max(int((widths[i] - 2 * pad) / (fs * 0.52)) - KINSOKU_SLACK, 4)
-            lines.append(wrap(cell, units))
+            units = max(int((widths[i] - 2 * pad) / (fs * 0.52)), 4)
+            lines.append(wrap_fit(cell, units))
         per_row.append(lines)
     total = sum(max(len(c) for c in r) * lh + 2 * pad for r in per_row)
     return per_row, total
@@ -197,7 +225,7 @@ def draw_table(s, name, headers, rows, weights, y0, y_max,
 def footnotes(s, name, lines, y, fs=13):
     """表格下方的 * / ** 註腳（灰階小字，逐行斷行）。"""
     for ln in lines:
-        for seg in wrap(ln, int((MARGIN_R - MARGIN_L) / (fs * 0.52)) - KINSOKU_SLACK):
+        for seg in wrap_fit(ln, int((MARGIN_R - MARGIN_L) / (fs * 0.52))):
             y += fs + 5
             s.append(txt(MARGIN_L, y, seg, fs, MUTED, "400", ls="0.2"))
     check_overflow(name, y)

@@ -112,6 +112,42 @@ class TestWrap:
     def test_short_text_untouched(self):
         assert gtf.wrap("短句", 20) == ["短句"]
 
+    def test_second_shift_is_actually_needed(self):
+        """連續禁則（如「，」後接「**」）要能連搬兩次——KINSOKU_MAX_SHIFT 不是白設的。"""
+        assert gtf.KINSOKU_MAX_SHIFT >= 2
+        lines = gtf.wrap("系列病例報告，病例對照試驗，或歷史對照試驗**", 12)
+        assert not any(ln[0] in gtf._NO_LINE_START for ln in lines[1:]), lines
+
+
+class TestWrapFit:
+    CASES = [
+        "非隨機控制的世代／追蹤研究（上市後監測）**",
+        "系列病例報告，病例對照試驗，或歷史對照試驗**",
+        "這個介入治療有幫助嗎？（治療益處）",
+        "評定證據等級（對照 OCEBM 2011 的等級表）",
+        "（（（測試）））、、。**",
+        "Mechanism-based reasoning",
+        "SR of randomized trials, SR of nested case-control studies, n-of-1 trial",
+        "a",
+        "",
+    ]
+
+    def test_never_exceeds_width(self):
+        """行寬保證：禁則推字會讓下一行變長，wrap_fit 必須把它壓回欄寬內。
+
+        超寬是橫向出血——check_overflow 只驗直向、完全沒有訊號，而 ppt-master 的
+        svg_quality_checker 會判 blocking error。units=1 排除在外：一個全形字就是 2 單位，
+        任何斷行法都塞不進 1 單位。
+        """
+        for units in range(2, 60):
+            for s in self.CASES:
+                for ln in gtf.wrap_fit(s, units):
+                    assert gtf.text_units(ln) <= units, f"units={units} 行={ln!r}"
+
+    def test_no_upfront_slack_penalty_on_narrow_columns(self):
+        """窄欄不該因為「預留餘裕」被逼到逐字硬切（舊 KINSOKU_SLACK 作法的病灶）。"""
+        assert gtf.wrap_fit("Mechanism-based reasoning", 15) == ["Mechanism-based", "reasoning"]
+
 
 class TestSourceNote:
     def test_single_line_at_note_baseline(self):

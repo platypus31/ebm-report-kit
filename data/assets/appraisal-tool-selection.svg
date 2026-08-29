@@ -41,16 +41,16 @@
 <rect x="721" y="384" width="464" height="42" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
 <text x="730.1702127659574" y="411" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-RCT</text>
 <rect x="95" y="426" width="626" height="66" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="104" y="453" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">A Measurement Tool to Assess Systematic Reviews</text>
-<text x="104" y="477" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">（AMSTAR）</text>
+<text x="104" y="453" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">A Measurement Tool to Assess Systematic Reviews（AMSTA</text>
+<text x="104" y="477" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">R）</text>
 <rect x="721" y="426" width="464" height="66" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
 <text x="730.1702127659574" y="453" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR</text>
 <rect x="95" y="492" width="626" height="66" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
 <text x="104" y="519" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Appraisal of Guidelines for Research and Evaluation</text>
 <text x="104" y="543" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">（AGREE）</text>
 <rect x="721" y="492" width="464" height="66" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="730.1702127659574" y="519" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Guideline development and the quality</text>
-<text x="730.1702127659574" y="543" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">of reporting</text>
+<text x="730.1702127659574" y="519" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Guideline development and the quality of</text>
+<text x="730.1702127659574" y="543" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reporting</text>
 <text x="90" y="576" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">選工具的順序：先分型（治療／診斷／預後／SR）再挑對應清單；同一篇只用一套工具，逐題留下 Yes／No／Can't tell。</text>
 <text x="90" y="700" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">依 Cochrane RoB、CASP、Oxford CEBM CAT、Newcastle-Ottawa Scale、AMSTAR、AGREE 各自公開說明整理自繪</text>
 </svg>

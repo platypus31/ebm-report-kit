@@ -29,144 +29,139 @@
 <text x="896.8170144462281" y="182" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">Step 4 (Level 4*)</text>
 <rect x="1077" y="168" width="108" height="21" fill="#3D434B" stroke="#B0B6BE" stroke-width="1"/>
 <text x="1080.5248796147675" y="182" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0.2">Step 5 (Level 5)</text>
-<rect x="95" y="189" width="219" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<rect x="95" y="189" width="219" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
 <text x="99" y="203" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">How common is the problem?</text>
-<rect x="314" y="189" width="189" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<rect x="314" y="189" width="189" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
 <text x="317.6998394863564" y="203" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Local and current random sample</text>
 <text x="317.6998394863564" y="216" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">surveys (or censuses)</text>
-<rect x="503" y="189" width="184" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="506.6565008025683" y="203" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of surveys that allow</text>
-<text x="506.6565008025683" y="216" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">matching to local</text>
-<text x="506.6565008025683" y="229" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">circumstances**</text>
-<rect x="686" y="189" width="206" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<rect x="503" y="189" width="184" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="506.6565008025683" y="203" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of surveys that allow matching</text>
+<text x="506.6565008025683" y="216" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">to local circumstances**</text>
+<rect x="686" y="189" width="206" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
 <text x="690.3643659711076" y="203" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Local non-random sample**</text>
-<rect x="893" y="189" width="184" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<rect x="893" y="189" width="184" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
 <text x="896.8170144462281" y="203" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series**</text>
-<rect x="1077" y="189" width="108" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<rect x="1077" y="189" width="108" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
 <text x="1080.5248796147675" y="203" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n/a</text>
-<rect x="95" y="236" width="219" height="60" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="99" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Is this diagnostic or monitoring test</text>
-<text x="99" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">accurate? (Diagnosis)</text>
-<rect x="314" y="236" width="189" height="60" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="317.6998394863564" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of cross sectional studies</text>
-<text x="317.6998394863564" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">with consistently applied</text>
-<text x="317.6998394863564" y="276" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reference standard and blinding</text>
-<rect x="503" y="236" width="184" height="60" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="506.6565008025683" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Individual cross sectional</text>
-<text x="506.6565008025683" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">studies with consistently</text>
-<text x="506.6565008025683" y="276" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">applied reference standard and</text>
-<text x="506.6565008025683" y="289" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">blinding</text>
-<rect x="686" y="236" width="206" height="60" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="690.3643659711076" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-consecutive studies, or studies</text>
-<text x="690.3643659711076" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">without consistently applied</text>
-<text x="690.3643659711076" y="276" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reference standards**</text>
-<rect x="893" y="236" width="184" height="60" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="896.8170144462281" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-control studies, or poor</text>
-<text x="896.8170144462281" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">or non-independent reference</text>
-<text x="896.8170144462281" y="276" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">standard**</text>
-<rect x="1077" y="236" width="108" height="60" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1080.5248796147675" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Mechanism-based</text>
-<text x="1080.5248796147675" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reasoning</text>
-<rect x="95" y="296" width="219" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="99" y="310" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">What will happen if we do not add a</text>
-<text x="99" y="323" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">therapy? (Prognosis)</text>
-<rect x="314" y="296" width="189" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="317.6998394863564" y="310" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of inception cohort studies</text>
-<rect x="503" y="296" width="184" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="506.6565008025683" y="310" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Inception cohort studies</text>
-<rect x="686" y="296" width="206" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="690.3643659711076" y="310" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Cohort study or control arm of</text>
-<text x="690.3643659711076" y="323" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">randomized trial*</text>
-<rect x="893" y="296" width="184" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="896.8170144462281" y="310" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series or case-control</text>
-<text x="896.8170144462281" y="323" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">studies, or poor quality</text>
-<text x="896.8170144462281" y="336" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">prognostic cohort study**</text>
-<rect x="1077" y="296" width="108" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1080.5248796147675" y="310" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n/a</text>
-<rect x="95" y="343" width="219" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="99" y="357" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Does this intervention help?</text>
-<text x="99" y="370" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">(Treatment Benefits)</text>
-<rect x="314" y="343" width="189" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="317.6998394863564" y="357" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of randomized trials or</text>
-<text x="317.6998394863564" y="370" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n-of-1 trials</text>
-<rect x="503" y="343" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="506.6565008025683" y="357" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Randomized trial or</text>
-<text x="506.6565008025683" y="370" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">observational study with</text>
-<text x="506.6565008025683" y="383" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">dramatic effect</text>
-<rect x="686" y="343" width="206" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="690.3643659711076" y="357" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-randomized controlled</text>
-<text x="690.3643659711076" y="370" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">cohort/follow-up study**</text>
-<rect x="893" y="343" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="896.8170144462281" y="357" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series, case-control</text>
-<text x="896.8170144462281" y="370" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">studies, or historically</text>
-<text x="896.8170144462281" y="383" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">controlled studies**</text>
-<rect x="1077" y="343" width="108" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1080.5248796147675" y="357" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Mechanism-based</text>
-<text x="1080.5248796147675" y="370" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reasoning</text>
-<rect x="95" y="390" width="219" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="99" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">What are the COMMON harms? (Treatment</text>
-<text x="99" y="417" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Harms)</text>
-<rect x="314" y="390" width="189" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="317.6998394863564" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of randomized trials, SR of</text>
-<text x="317.6998394863564" y="417" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">nested case-control studies,</text>
-<text x="317.6998394863564" y="430" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n-of-1 trial with the patient</text>
-<text x="317.6998394863564" y="443" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">you are raising the question</text>
-<text x="317.6998394863564" y="456" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">about, or observational study</text>
-<text x="317.6998394863564" y="469" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">with dramatic effect</text>
-<rect x="503" y="390" width="184" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="506.6565008025683" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Individual randomized trial or</text>
-<text x="506.6565008025683" y="417" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">(exceptionally) observational</text>
-<text x="506.6565008025683" y="430" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">study with dramatic effect</text>
-<rect x="686" y="390" width="206" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="690.3643659711076" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-randomized controlled</text>
-<text x="690.3643659711076" y="417" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">cohort/follow-up study</text>
-<text x="690.3643659711076" y="430" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">(post-marketing surveillance)</text>
-<text x="690.3643659711076" y="443" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">provided there are sufficient</text>
-<text x="690.3643659711076" y="456" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">numbers to rule out a common harm</text>
-<text x="690.3643659711076" y="469" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">(for long-term harms the duration of</text>
-<text x="690.3643659711076" y="482" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">follow-up must be sufficient)**</text>
-<rect x="893" y="390" width="184" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="896.8170144462281" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series, case-control, or</text>
-<text x="896.8170144462281" y="417" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">historically controlled</text>
-<text x="896.8170144462281" y="430" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">studies**</text>
-<rect x="1077" y="390" width="108" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1080.5248796147675" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Mechanism-based</text>
-<text x="1080.5248796147675" y="417" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reasoning</text>
-<rect x="95" y="489" width="219" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="99" y="503" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">What are the RARE harms? (Treatment</text>
-<text x="99" y="516" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Harms)</text>
-<rect x="314" y="489" width="189" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="317.6998394863564" y="503" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of randomized trials or</text>
-<text x="317.6998394863564" y="516" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n-of-1 trial</text>
-<rect x="503" y="489" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="506.6565008025683" y="503" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Randomized trial or</text>
-<text x="506.6565008025683" y="516" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">(exceptionally) observational</text>
-<text x="506.6565008025683" y="529" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">study with dramatic effect</text>
-<rect x="686" y="489" width="206" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="690.3643659711076" y="503" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
-<rect x="893" y="489" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="896.8170144462281" y="503" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
-<rect x="1077" y="489" width="108" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1080.5248796147675" y="503" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
-<rect x="95" y="536" width="219" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="99" y="550" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Is this (early detection) test</text>
-<text x="99" y="563" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">worthwhile? (Screening)</text>
-<rect x="314" y="536" width="189" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="317.6998394863564" y="550" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of randomized trials</text>
-<rect x="503" y="536" width="184" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="506.6565008025683" y="550" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Randomized trial</text>
-<rect x="686" y="536" width="206" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="690.3643659711076" y="550" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-randomized controlled</text>
-<text x="690.3643659711076" y="563" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">cohort/follow-up study**</text>
-<rect x="893" y="536" width="184" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="896.8170144462281" y="550" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series, case-control, or</text>
-<text x="896.8170144462281" y="563" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">historically controlled</text>
-<text x="896.8170144462281" y="576" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">studies**</text>
-<rect x="1077" y="536" width="108" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
-<text x="1080.5248796147675" y="550" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Mechanism-based</text>
-<text x="1080.5248796147675" y="563" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reasoning</text>
-<text x="90" y="601" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">* Level may be graded down on study quality, imprecision, indirectness (study PICO does not match question PICO), inconsistency between studies, or very small</text>
-<text x="90" y="619" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">absolute effect size; graded up on a large or very large effect size.</text>
-<text x="90" y="637" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">** A systematic review (SR) is generally better than an individual study.</text>
+<rect x="95" y="223" width="219" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="99" y="237" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Is this diagnostic or monitoring test</text>
+<text x="99" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">accurate? (Diagnosis)</text>
+<rect x="314" y="223" width="189" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="317.6998394863564" y="237" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of cross sectional studies with</text>
+<text x="317.6998394863564" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">consistently applied reference</text>
+<text x="317.6998394863564" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">standard and blinding</text>
+<rect x="503" y="223" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="506.6565008025683" y="237" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Individual cross sectional</text>
+<text x="506.6565008025683" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">studies with consistently applied</text>
+<text x="506.6565008025683" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reference standard and blinding</text>
+<rect x="686" y="223" width="206" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="690.3643659711076" y="237" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-consecutive studies, or studies</text>
+<text x="690.3643659711076" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">without consistently applied reference</text>
+<text x="690.3643659711076" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">standards**</text>
+<rect x="893" y="223" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="896.8170144462281" y="237" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-control studies, or poor or</text>
+<text x="896.8170144462281" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">non-independent reference</text>
+<text x="896.8170144462281" y="263" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">standard**</text>
+<rect x="1077" y="223" width="108" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1080.5248796147675" y="237" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Mechanism-based</text>
+<text x="1080.5248796147675" y="250" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reasoning</text>
+<rect x="95" y="270" width="219" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="99" y="284" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">What will happen if we do not add a</text>
+<text x="99" y="297" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">therapy? (Prognosis)</text>
+<rect x="314" y="270" width="189" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="317.6998394863564" y="284" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of inception cohort studies</text>
+<rect x="503" y="270" width="184" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="506.6565008025683" y="284" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Inception cohort studies</text>
+<rect x="686" y="270" width="206" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="690.3643659711076" y="284" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Cohort study or control arm of</text>
+<text x="690.3643659711076" y="297" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">randomized trial*</text>
+<rect x="893" y="270" width="184" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="896.8170144462281" y="284" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series or case-control</text>
+<text x="896.8170144462281" y="297" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">studies, or poor quality</text>
+<text x="896.8170144462281" y="310" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">prognostic cohort study**</text>
+<rect x="1077" y="270" width="108" height="47" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1080.5248796147675" y="284" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n/a</text>
+<rect x="95" y="317" width="219" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="99" y="331" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Does this intervention help? (Treatment</text>
+<text x="99" y="344" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Benefits)</text>
+<rect x="314" y="317" width="189" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="317.6998394863564" y="331" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of randomized trials or n-of-1</text>
+<text x="317.6998394863564" y="344" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">trials</text>
+<rect x="503" y="317" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="506.6565008025683" y="331" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Randomized trial or observational</text>
+<text x="506.6565008025683" y="344" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">study with dramatic effect</text>
+<rect x="686" y="317" width="206" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="690.3643659711076" y="331" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-randomized controlled</text>
+<text x="690.3643659711076" y="344" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">cohort/follow-up study**</text>
+<rect x="893" y="317" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="896.8170144462281" y="331" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series, case-control</text>
+<text x="896.8170144462281" y="344" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">studies, or historically</text>
+<text x="896.8170144462281" y="357" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">controlled studies**</text>
+<rect x="1077" y="317" width="108" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1080.5248796147675" y="331" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Mechanism-based</text>
+<text x="1080.5248796147675" y="344" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reasoning</text>
+<rect x="95" y="364" width="219" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="99" y="378" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">What are the COMMON harms? (Treatment</text>
+<text x="99" y="391" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Harms)</text>
+<rect x="314" y="364" width="189" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="317.6998394863564" y="378" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of randomized trials, SR of</text>
+<text x="317.6998394863564" y="391" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">nested case-control studies,</text>
+<text x="317.6998394863564" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">n-of-1 trial with the patient you</text>
+<text x="317.6998394863564" y="417" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">are raising the question about, or</text>
+<text x="317.6998394863564" y="430" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">observational study with dramatic</text>
+<text x="317.6998394863564" y="443" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">effect</text>
+<rect x="503" y="364" width="184" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="506.6565008025683" y="378" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Individual randomized trial or</text>
+<text x="506.6565008025683" y="391" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">(exceptionally) observational</text>
+<text x="506.6565008025683" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">study with dramatic effect</text>
+<rect x="686" y="364" width="206" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="690.3643659711076" y="378" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-randomized controlled</text>
+<text x="690.3643659711076" y="391" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">cohort/follow-up study (post-marketing</text>
+<text x="690.3643659711076" y="404" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">surveillance) provided there are</text>
+<text x="690.3643659711076" y="417" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">sufficient numbers to rule out a</text>
+<text x="690.3643659711076" y="430" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">common harm (for long-term harms the</text>
+<text x="690.3643659711076" y="443" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">duration of follow-up must be</text>
+<text x="690.3643659711076" y="456" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">sufficient)**</text>
+<rect x="893" y="364" width="184" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="896.8170144462281" y="378" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series, case-control, or</text>
+<text x="896.8170144462281" y="391" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">historically controlled studies**</text>
+<rect x="1077" y="364" width="108" height="99" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1080.5248796147675" y="378" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Mechanism-based</text>
+<text x="1080.5248796147675" y="391" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reasoning</text>
+<rect x="95" y="463" width="219" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="99" y="477" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">What are the RARE harms? (Treatment</text>
+<text x="99" y="490" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Harms)</text>
+<rect x="314" y="463" width="189" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="317.6998394863564" y="477" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of randomized trials or n-of-1</text>
+<text x="317.6998394863564" y="490" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">trial</text>
+<rect x="503" y="463" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="506.6565008025683" y="477" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Randomized trial or</text>
+<text x="506.6565008025683" y="490" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">(exceptionally) observational</text>
+<text x="506.6565008025683" y="503" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">study with dramatic effect</text>
+<rect x="686" y="463" width="206" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="690.3643659711076" y="477" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
+<rect x="893" y="463" width="184" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="896.8170144462281" y="477" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
+<rect x="1077" y="463" width="108" height="47" fill="#F0F2F5" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1080.5248796147675" y="477" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2"></text>
+<rect x="95" y="510" width="219" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="99" y="524" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Is this (early detection) test</text>
+<text x="99" y="537" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">worthwhile? (Screening)</text>
+<rect x="314" y="510" width="189" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="317.6998394863564" y="524" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">SR of randomized trials</text>
+<rect x="503" y="510" width="184" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="506.6565008025683" y="524" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Randomized trial</text>
+<rect x="686" y="510" width="206" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="690.3643659711076" y="524" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Non-randomized controlled</text>
+<text x="690.3643659711076" y="537" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">cohort/follow-up study**</text>
+<rect x="893" y="510" width="184" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="896.8170144462281" y="524" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Case-series, case-control, or</text>
+<text x="896.8170144462281" y="537" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">historically controlled studies**</text>
+<rect x="1077" y="510" width="108" height="34" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="1"/>
+<text x="1080.5248796147675" y="524" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">Mechanism-based</text>
+<text x="1080.5248796147675" y="537" font-family="Georgia, serif" font-size="10" font-weight="400" fill="#1A1D21" text-anchor="start" letter-spacing="0.2">reasoning</text>
+<text x="90" y="562" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">* Level may be graded down on study quality, imprecision, indirectness (study PICO does not match question PICO), inconsistency between studies, or very small</text>
+<text x="90" y="580" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">absolute effect size; graded up on a large or very large effect size.</text>
+<text x="90" y="598" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">** A systematic review (SR) is generally better than an individual study.</text>
 <text x="90" y="700" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">依 Oxford CEBM《The Oxford 2011 Levels of Evidence》公開內容自繪</text>
 </svg>
