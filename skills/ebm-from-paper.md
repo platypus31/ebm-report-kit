@@ -55,7 +55,9 @@ PROJECT_DIR="$PWD/projects/<name>"    # 換成你的專案名，須為絕對路�
    curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=<PMID>&retmode=json"
    # PDF（佐證裁圖用）＋ 全文 XML（精讀／引句用，比 PDF 文字乾淨）
    curl -sL -A "Mozilla/5.0" "https://europepmc.org/articles/<PMCID>?pdf=render" -o "$PROJECT_DIR/assets/paper.pdf"
-   curl -s "https://www.ebi.ac.uk/europepmc/webservices/rest/<PMCID>/fullTextXML" -o "$PROJECT_DIR/assets/fulltext.xml"
+   curl -sL "https://www.ebi.ac.uk/europepmc/webservices/rest/<PMCID>/fullTextXML" -o "$PROJECT_DIR/assets/fulltext.xml"
+   # -L 必加：少了它遇 redirect 會把 HTML 轉址頁存成 .xml；抓完先驗根節點是不是 XML
+   head -c 200 "$PROJECT_DIR/assets/fulltext.xml" | grep -q "<article" || echo "⚠️ fullTextXML 不是文章 XML（可能無全文或被擋），改走 PDF/摘要"
    # 驗證頁數（file 指令對 linearized PDF 會誤報 0 pages，以 pymupdf 為準）
    "$PY" -c "import pymupdf;print(len(pymupdf.open('$PROJECT_DIR/assets/paper.pdf')))"
    ```
