@@ -92,7 +92,30 @@ PROJECT_DIR="$PWD/projects/<name>"                 # 換成你的專案名，須
 
 1. **組內容** → 依 `data/example-content-ebm.json` 骨架，把各步產出寫成 `$PROJECT_DIR/06_slides/content.json`
    （cover + slides：**section 過場用 6A 大寫**（ANALYSIS/ASK/ACQUIRE/APPRAISE/APPLY/AUDIT；
-   ANALYSIS 素材取自 `01_ask/clinical_scenario.md`，它沒有獨立目錄）＋ content 條列頁 ＋ figure/table/textcard 頁）
+   ANALYSIS 素材取自 `01_ask/clinical_scenario.md`，它沒有獨立目錄）＋ content 條列頁 ＋ figure/table/textcard/asset 頁）
+
+   **固定教學圖走 `asset` 頁型，不要自己重畫、也不要貼外部版權圖**。六張內建圖已隨 repo 附帶
+   （`data/assets/*.svg`，`scripts/gen_teaching_figures.py` 生成，清單見 `data/assets/README.md`）：
+
+   | 用在哪 | path |
+   |---|---|
+   | ACQUIRE 開頭：6S 檢索階層 | `data/assets/evidence-pyramid-6s.svg` |
+   | APPRAISE 工具宣告：工具 ↔ 研究設計對照 | `data/assets/appraisal-tool-selection.svg` |
+   | APPRAISE 開頭（選配）：評讀流程五步驟 | `data/assets/appraisal-workflow.svg` |
+   | APPRAISE 開頭（選配）：VIP 上位框架 | `data/assets/appraisal-vip.svg` |
+   | 評讀尾：OCEBM 2011 等級（中文） | `data/assets/ocebm-2011-levels-zh.svg` |
+   | 評讀尾：OCEBM 2011 等級（英文） | `data/assets/ocebm-2011-levels-en.svg` |
+
+   ```json
+   {"kind": "asset", "title": "文獻等級：OCEBM 2011",
+    "caption": "本文＝非隨機控制之世代研究 → Level 3",
+    "path": "data/assets/ocebm-2011-levels-zh.svg"}
+   ```
+
+   `asset` 與 `figure` 的差別：`figure` 是把一張 png/jpg 塞進 800×440 圖框（標題與 caption 由引擎畫）；
+   `asset` 是「這個 SVG 本身就是一整頁」，標題由素材自帶，`title` 只決定輸出檔名，引擎只補 caption。
+   ⚠️ `asset` 不吃 `hl` 紅框（那是 `figure` 的點陣圖功能）；素材不是 1280×720 的 SVG 會退回佔位框並印 WARN。
+   **報告作者不要手改 `data/assets/*.svg`**（下次重生會被蓋掉）——要改內容改生成器再重跑。
 2. **抽圖表** → 選定文獻的 PDF 抽 forest plot／KM curve，截圖以 `path` 欄位嵌入 figure 頁：
 
    ```bash

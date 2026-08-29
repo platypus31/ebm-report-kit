@@ -81,8 +81,10 @@ bash bootstrap.sh --check-only
   export PPT_MASTER_DIR=/your/path/to/ppt-master
   ```
 
-- **固定素材（選配）**：6S 金字塔、OCEBM 2011 等級表等圖片因版權不隨 repo 附帶。
-  需要時自行放進 `data/assets/`（`mkdir -p data/assets`），或用 `table`／`textcard` 頁型重製成可編輯頁面。
+- **固定教學圖（已內建，免安裝）**：6S 金字塔、OCEBM 2011 等級表（中／英）、評讀工具對照表、
+  評讀流程五步驟、VIP 框架六張，是本 repo **依公開學術內容自繪**的全頁 SVG，隨 repo 附帶、
+  可版控可重生（`python3 scripts/gen_teaching_figures.py`），在 `content.json` 用 `asset` 頁型引用。
+  清單與用法見 `data/assets/README.md`。自己的版權素材請自行放進 `data/assets/`、**不要提交進 repo**；
   缺圖不會中斷流程，簡報引擎會畫佔位框。
 
 ## 自訂風格與模板

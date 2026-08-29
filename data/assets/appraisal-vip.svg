@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+<rect width="1280" height="720" fill="#F7F8FA"/>
+<path d="M 1426 37 L 1380 44 L 1334 49 L 1288 52 L 1242 51 L 1196 48 L 1150 43 L 1104 35 L 1058 26 L 1012 16 L 966 7 L 920 -2 L 874 -9" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.50"/>
+<path d="M 1426 53 L 1380 59 L 1334 63 L 1288 64 L 1242 62 L 1196 58 L 1150 51 L 1104 43 L 1058 33 L 1012 24 L 966 14 L 920 7 L 874 1" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.49"/>
+<path d="M 1426 68 L 1380 73 L 1334 76 L 1288 76 L 1242 72 L 1196 67 L 1150 59 L 1104 50 L 1058 41 L 1012 31 L 966 22 L 920 15 L 874 10" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.49"/>
+<path d="M 1426 83 L 1380 87 L 1334 88 L 1288 86 L 1242 82 L 1196 75 L 1150 67 L 1104 58 L 1058 48 L 1012 39 L 966 31 L 920 25 L 874 21" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.48"/>
+<path d="M 1426 97 L 1380 100 L 1334 100 L 1288 97 L 1242 91 L 1196 84 L 1150 75 L 1104 65 L 1058 55 L 1012 47 L 966 40 L 920 35 L 874 32" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.48"/>
+<path d="M 1426 111 L 1380 112 L 1334 110 L 1288 106 L 1242 100 L 1196 91 L 1150 82 L 1104 72 L 1058 63 L 1012 55 L 966 49 L 920 45 L 874 44" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.47"/>
+<path d="M 1426 124 L 1380 124 L 1334 121 L 1288 115 L 1242 108 L 1196 99 L 1150 89 L 1104 80 L 1058 71 L 1012 64 L 966 59 L 920 56 L 874 57" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.46"/>
+<path d="M 1426 136 L 1380 135 L 1334 130 L 1288 124 L 1242 116 L 1196 106 L 1150 96 L 1104 87 L 1058 79 L 1012 73 L 966 69 L 920 68 L 874 70" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.46"/>
+<path d="M 1426 148 L 1380 145 L 1334 139 L 1288 132 L 1242 123 L 1196 113 L 1150 104 L 1104 95 L 1058 88 L 1012 83 L 966 80 L 920 80 L 874 83" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.45"/>
+<path d="M 1426 159 L 1380 155 L 1334 148 L 1288 140 L 1242 130 L 1196 121 L 1150 111 L 1104 103 L 1058 97 L 1012 93 L 966 92 L 920 94 L 874 98" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.45"/>
+<path d="M 1426 169 L 1380 164 L 1334 156 L 1288 147 L 1242 138 L 1196 128 L 1150 119 L 1104 112 L 1058 107 L 1012 104 L 966 104 L 920 107 L 874 113" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.44"/>
+<path d="M 1426 179 L 1380 172 L 1334 164 L 1288 155 L 1242 145 L 1196 136 L 1150 127 L 1104 121 L 1058 117 L 1012 116 L 966 118 L 920 122 L 874 128" fill="none" stroke="#8A9099" stroke-width="1.1" opacity="0.43"/>
+<circle cx="70" cy="70" r="13" fill="#6B7280" opacity="0.8"/>
+<circle cx="116" cy="70" r="13" fill="#6B7280" opacity="0.8"/>
+<circle cx="162" cy="70" r="13" fill="#6B7280" opacity="0.8"/>
+<text x="90" y="120" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#1A1A1A" text-anchor="start" letter-spacing="1.2">嚴格評讀 VIP 框架</text>
+<line x1="90" y1="145" x2="1190" y2="145" stroke="#C4C9D0" stroke-width="2"/>
+<circle cx="300" cy="288" r="96" fill="#3D434B"/>
+<circle cx="300" cy="288" r="96" fill="none" stroke="#B0B6BE" stroke-width="1.5"/>
+<text x="300" y="284" font-family="Georgia, serif" font-size="23" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.4">Validity</text>
+<line x1="242" y1="296" x2="358" y2="296" stroke="#FFFFFF" stroke-width="1.2" opacity="0.7"/>
+<text x="300" y="320" font-family="Georgia, serif" font-size="19" font-weight="400" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.3">(Reliability)</text>
+<text x="300" y="430" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#1A1D21" text-anchor="middle" letter-spacing="0.5">效度／信度</text>
+<text x="300" y="468" font-family="Georgia, serif" font-size="20" font-weight="400" fill="#2A2A2A" text-anchor="middle" letter-spacing="0.2">我們可以相信這個證據嗎？</text>
+<text x="300" y="508" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="middle" letter-spacing="0.2">看設計與執行：隨機、盲化、</text>
+<text x="300" y="529" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="middle" letter-spacing="0.2">追蹤完整度、混雜是否控制好</text>
+<circle cx="640" cy="288" r="96" fill="#6B7280"/>
+<circle cx="640" cy="288" r="96" fill="none" stroke="#B0B6BE" stroke-width="1.5"/>
+<text x="640" y="284" font-family="Georgia, serif" font-size="23" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.4">Importance</text>
+<line x1="582" y1="296" x2="698" y2="296" stroke="#FFFFFF" stroke-width="1.2" opacity="0.7"/>
+<text x="640" y="320" font-family="Georgia, serif" font-size="19" font-weight="400" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.3">(Impact)</text>
+<text x="640" y="430" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#1A1D21" text-anchor="middle" letter-spacing="0.5">重要性</text>
+<text x="640" y="468" font-family="Georgia, serif" font-size="20" font-weight="400" fill="#2A2A2A" text-anchor="middle" letter-spacing="0.2">相信了，但這個結果重要嗎？</text>
+<text x="640" y="508" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="middle" letter-spacing="0.2">看效應量與精確度：ARR／NNT、</text>
+<text x="640" y="529" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="middle" letter-spacing="0.2">95% CI 寬窄，不只看 p 值</text>
+<circle cx="980" cy="288" r="96" fill="#A6ACB4"/>
+<circle cx="980" cy="288" r="96" fill="none" stroke="#B0B6BE" stroke-width="1.5"/>
+<text x="980" y="284" font-family="Georgia, serif" font-size="23" font-weight="700" fill="#1A1D21" text-anchor="middle" letter-spacing="0.4">Practice</text>
+<line x1="922" y1="296" x2="1038" y2="296" stroke="#1A1D21" stroke-width="1.2" opacity="0.7"/>
+<text x="980" y="320" font-family="Georgia, serif" font-size="19" font-weight="400" fill="#1A1D21" text-anchor="middle" letter-spacing="0.3">(Applicability)</text>
+<text x="980" y="430" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#1A1D21" text-anchor="middle" letter-spacing="0.5">臨床適用性</text>
+<text x="980" y="468" font-family="Georgia, serif" font-size="20" font-weight="400" fill="#2A2A2A" text-anchor="middle" letter-spacing="0.2">結果能用在我的病人身上嗎？</text>
+<text x="980" y="508" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="middle" letter-spacing="0.2">看族群、劑量、照護環境、</text>
+<text x="980" y="529" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="middle" letter-spacing="0.2">可近性是否對得上</text>
+<line x1="90" y1="604" x2="1190" y2="604" stroke="#C4C9D0" stroke-width="1.5"/>
+<text x="640.0" y="634" font-family="Georgia, serif" font-size="19" font-weight="700" fill="#8A9099" text-anchor="middle" letter-spacing="0.3">三關依序過：V 不過就不必談 I，I 不過就不必談 P</text>
+<text x="90" y="700" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#8A9099" text-anchor="start" letter-spacing="0.2">依實證醫學 VIP（Validity／Importance／Practice）評讀框架通用教學內容自繪</text>
+</svg>

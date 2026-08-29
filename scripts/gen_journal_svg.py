@@ -319,7 +319,51 @@ def figure(outdir, idx, title, caption, path=None, hl=None):
     s.append(txt(W/2, 655, caption, 22, "#8A9099", "400", "middle"))
     write(outdir, idx, "fig_" + slug(title), s)
 
-VALID_KINDS = {"section", "figure", "table", "textcard", "content"}
+ASSET_VIEWBOX = f"0 0 {W} {H}"
+
+def asset(outdir, idx, title, caption, path=None):
+    """整頁素材頁：把預先生成的全頁 SVG（`scripts/gen_teaching_figures.py` 的產物）原樣放進投影片序列。
+
+    與 figure 頁的差別：figure 是「把一張點陣圖塞進 800x440 的框」，asset 是「這個檔案本身就是一整頁」，
+    所以標題與版面都由素材自己帶，content.json 的 `title` 只用來決定輸出檔名。
+    素材必須是 1280x720 的全頁 SVG（版面契約見 gen_teaching_figures.py 檔頭）；不合格就退回佔位框，
+    絕不靜默產出空白頁。
+    """
+    body = None
+    if path and os.path.isfile(path) and path.lower().endswith(".svg"):
+        try:
+            with open(path, encoding="utf-8") as f:
+                body = f.read()
+        except OSError as e:
+            sys.stderr.write(f"WARN asset「{title}」：素材讀不到（{path}：{e}），改用佔位框\n")
+            body = None
+        if body is not None and ASSET_VIEWBOX not in body:
+            sys.stderr.write(f"WARN asset「{title}」：素材不是 {W}x{H} 全頁 SVG（viewBox 不符：{path}），改用佔位框\n")
+            body = None
+    elif path:
+        sys.stderr.write(f"WARN asset「{title}」：素材缺失或非 .svg（{path}），改用佔位框\n")
+    if body is None:
+        s = head()
+        s.append(dots(70, 70))
+        s.append(txt(90, 120, title, 46, ls="1.2"))
+        s.append('<line x1="90" y1="145" x2="1190" y2="145" stroke="#C4C9D0" stroke-width="2"/>')
+        s.append('<rect x="240" y="200" width="800" height="380" fill="#FFFFFF" stroke="#B0B6BE" stroke-width="2" stroke-dasharray="10 8"/>')
+        s.append(txt(W/2, 380, "[ Teaching Figure ]", 34, "#8A9099", "700", "middle"))
+        if caption:
+            s.append(txt(W/2, 655, caption, 22, "#8A9099", "400", "middle"))
+        write(outdir, idx, "as_" + slug(title), s)
+        return
+    # caption 由本頁注入：素材的版面契約把 y 656-676 留空給它（見 gen_teaching_figures.py 檔頭）
+    body = body.rstrip()
+    if not body.endswith("</svg>"):
+        sys.stderr.write(f"WARN asset「{title}」：素材結尾不是 </svg>（{path}），caption 未注入\n")
+    elif caption:
+        # 只切掉結尾那個 </svg> 再補回，避免 str.replace 誤動素材內部（巢狀 svg／註解）的同名字串
+        body = body[: -len("</svg>")] + txt(W/2, 672, caption, 20, "#8A9099", "400", "middle") + "\n</svg>"
+    with open(f"{outdir}/{idx}_as_{slug(title)}.svg", "w", encoding="utf-8") as f:
+        f.write(body)
+
+VALID_KINDS = {"section", "figure", "table", "textcard", "content", "asset"}
 _LIST_FIELDS = {"bullets": list, "paragraphs": list, "rows": list, "headers": list}
 
 def validate_content(data):
@@ -373,6 +417,7 @@ def build(content_path, outdir):
     cover(outdir, f"{n:02d}", data.get("cover") or {}); n += 1
     dispatch = {"section": lambda idx, sl: section(outdir, idx, sl.get("name", "")),
                 "figure": lambda idx, sl: figure(outdir, idx, sl.get("title", "Figure"), sl.get("caption", ""), sl.get("path"), sl.get("hl")),
+                "asset": lambda idx, sl: asset(outdir, idx, sl.get("title", "Asset"), sl.get("caption", ""), sl.get("path")),
                 "table": lambda idx, sl: table(outdir, idx, sl.get("title", ""), sl.get("headers", []), sl.get("rows", []), sl.get("widths"), sl.get("note")),
                 "textcard": lambda idx, sl: textcard(outdir, idx, sl.get("title", ""), sl.get("paragraphs", []), sl.get("quote"), sl.get("caption")),
                 "content": lambda idx, sl: content(outdir, idx, sl.get("title", ""), sl.get("bullets", []))}

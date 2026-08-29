@@ -70,7 +70,7 @@
       ["O", "COVID-19 確診／住院／住院後死亡", "Hospitalization [MeSH]；Mortality [MeSH]；COVID-19 diagnosis", "確診、住院、死亡"]],
      "note": "這是一個　□ 治療型　□ 診斷型　□ 預後型　□ 傷害型　■ 預防型　問題"},
     {"kind": "section", "name": "ACQUIRE"},
-    {"kind": "figure", "title": "以 6S 階層取得實證資訊", "caption": "Secondary 由上往下 → Primary；本報告：PubMed＋Cochrane（無帳號資料庫如實省略）", "path": "data/assets/6s-pyramid.jpg"},
+    {"kind": "asset", "title": "以 6S 階層取得實證資訊", "caption": "Secondary 由上往下 → Primary；本報告：PubMed＋Cochrane（無帳號資料庫如實省略）", "path": "data/assets/evidence-pyramid-6s.svg"},
     {"kind": "content", "title": "檢索目標", "bullets": [
       "Use PICO keywords search（MeSH＋布林邏輯）",
       "目標設計：Cohort study / Systematic Review",
@@ -185,7 +185,7 @@
       "臨床：疫情期間確診風險約降三分之一",
       "白話：每 100 位未接種者確診 1 例的期間，接種者約 0.65 例",
       "NNT：原文未提供分組事件數，無法換算（如實標註）"]},
-    {"kind": "figure", "title": "文獻等級：OCEBM 2011", "caption": "非隨機控制之世代研究 → Level 3（Level 1=RCT 之 SR；Level 2=單一 RCT；效應非 dramatic 不升級）", "path": "data/assets/ocebm-2011-zh.jpg"},
+    {"kind": "asset", "title": "文獻等級：OCEBM 2011", "caption": "非隨機控制之世代研究 → Level 3（Level 1=RCT 之 SR；Level 2=單一 RCT；效應非 dramatic 不升級）", "path": "data/assets/ocebm-2011-levels-zh.svg"},
     {"kind": "section", "name": "APPLY"},
     {"kind": "content", "title": "Q10 能應用到陳伯伯嗎？（逐項核對）", "bullets": [
       "■ Yes　□ No　□ Can't tell",

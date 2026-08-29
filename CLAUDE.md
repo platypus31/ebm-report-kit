@@ -99,6 +99,7 @@ projects/<name>/
 | `scripts/dedupe_results.py` | 候選文獻去重（依 PMID → DOI → 標題相似度） |
 | `scripts/export_appraisal.py` | 將評讀 JSON 匯出為結構化 CSV |
 | `scripts/gen_journal_svg.py` | **簡報主引擎**：content.json → White Grey SVG deck |
+| `scripts/gen_teaching_figures.py` | 六張固定教學圖產生器（自繪全頁 SVG → `data/assets/`） |
 | `scripts/clip_evidence.py` | 評讀佐證裁圖（搜關鍵句→裁該欄→畫紅框） |
 | `scripts/extract_figures.py` | 從論文 PDF 抽統計圖表 |
 | `scripts/pubmed_shot.js` | PubMed 結果頁截圖＋計數（Playwright） |
@@ -188,6 +189,7 @@ ebm-report-kit/
 │   └── load-progress.md               # 載入進度
 ├── scripts/                           # 實體腳本（所有平台共用）
 │   ├── gen_journal_svg.py             # 簡報主引擎（content.json → SVG）
+│   ├── gen_teaching_figures.py        # 六張固定教學圖（自繪全頁 SVG）
 │   ├── clip_evidence.py               # 評讀佐證裁圖＋紅框
 │   ├── extract_figures.py             # 從 PDF 抽統計圖表
 │   ├── pubmed_shot.js                 # PubMed 截圖（Playwright）
@@ -215,7 +217,7 @@ ebm-report-kit/
 │   ├── appraisal-tools.md             # 評讀工具對照表
 │   ├── ebm-slide-template.md          # 舊版 5A 快速骨架（衝突時以 report-spec 為準）
 │   ├── progress-schema.md             # 進度 JSON schema
-│   ├── assets/                        # 自備固定素材（版權圖不隨 repo 附帶）
+│   ├── assets/                        # 內建六張自繪教學圖（.svg）＋你自備的素材
 │   ├── references/                    # CASP 檢核表 CSV、PICO 模板
 │   └── templates/                     # style-a~d（僅 fallback generate_pptx.py 用）
 ├── docs/

@@ -13,6 +13,10 @@
 6. **PRISMA 匯流圖**收攏所有資料庫（Identification → 去重 → 篩選 → 納入）。
 7. **文獻比較 MPICOT＋紅黃綠燈**（Method/P/I/C/O/Time 六欄，逐篇評級），最佳文獻明講選文理由（符合 PICO／全文／樣本數／設計）。
 8. **OCEBM 2011 等級頁**標本文落點，全篇擺位一致（建議評讀尾）。
+8b. **固定教學圖直接用內建的六張**（`data/assets/*.svg`，`asset` 頁型）：6S 金字塔（ACQUIRE 開頭）／
+   OCEBM 2011 等級表中英各一（評讀尾）／評讀工具對照表（APPRAISE 工具宣告）／評讀流程五步驟／
+   VIP 框架。這些是跨報告共用素材，**不要每份報告重畫，也不要貼有版權的外部圖檔**；
+   內容要改就改 `scripts/gen_teaching_figures.py` 再重生（清單見 `data/assets/README.md`）。
 9. **Apply＝逐項核對＋共享決策＋白話回覆**：applicability 清單（年齡/性別/種族/病況/時序逐項比對）；治療型用 SDM 4E（Evidence/Expectation/Expertise/Environment）、診斷型用 3E＋Apply 3 題；缺口主動查證補洞（仿單/在地資料）。
 10. **AUDIT 五面向自評＋效率評估**（題組見 `data/slide-snippets.json`，答案各報告自填、時數留白）。
 
