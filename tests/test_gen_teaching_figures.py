@@ -209,6 +209,28 @@ class TestAssetSlide:
         assert "[ Teaching Figure ]" in got
         assert "WARN" in err.getvalue()
 
+    def test_non_utf8_asset_falls_back(self, tmp_path):
+        """壞編碼的素材要退回佔位框，不能讓整個 build() 崩掉。
+
+        UnicodeDecodeError 不是 OSError 的子類，只攔 OSError 會漏掉這條路徑。
+        """
+        import io
+        import json
+        import sys
+        bad = tmp_path / "latin1.svg"
+        bad.write_bytes(b'<svg viewBox="0 0 1280 720">\xff\xfe not utf-8</svg>')
+        deck = tmp_path / "svg_output"
+        cj = tmp_path / "content.json"
+        cj.write_text(json.dumps(self._content(bad)), encoding="utf-8")
+        err = io.StringIO()
+        orig, sys.stderr = sys.stderr, err
+        try:
+            build(str(cj), str(deck))   # 不得拋例外
+        finally:
+            sys.stderr = orig
+        assert "[ Teaching Figure ]" in (deck / "02_as_等級表.svg").read_text(encoding="utf-8")
+        assert "編碼不對" in err.getvalue()
+
     def test_wrong_size_svg_rejected(self, tmp_path):
         """非 1280x720 的 SVG 不能被當全頁素材貼上去（會變成半張圖）。"""
         import io

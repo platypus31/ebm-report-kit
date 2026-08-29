@@ -334,8 +334,10 @@ def asset(outdir, idx, title, caption, path=None):
         try:
             with open(path, encoding="utf-8") as f:
                 body = f.read()
-        except OSError as e:
-            sys.stderr.write(f"WARN asset「{title}」：素材讀不到（{path}：{e}），改用佔位框\n")
+        # UnicodeDecodeError 不是 OSError 的子類：只攔 OSError 的話，壞編碼的素材會讓整個
+        # build() 當場崩掉，而不是退回佔位框——那就違背了本函式與 README 講的「絕不中斷」保證
+        except (OSError, UnicodeDecodeError) as e:
+            sys.stderr.write(f"WARN asset「{title}」：素材讀不到或編碼不對（{path}：{e}），改用佔位框\n")
             body = None
         if body is not None and ASSET_VIEWBOX not in body:
             sys.stderr.write(f"WARN asset「{title}」：素材不是 {W}x{H} 全頁 SVG（viewBox 不符：{path}），改用佔位框\n")
